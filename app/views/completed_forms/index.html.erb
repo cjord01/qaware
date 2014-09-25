@@ -1,7 +1,8 @@
+<h2>Completed Forms</h2>
 <ul>
-  <% @completed.each do |completed| %>
-    <li><%= completed.form.title %> text</li>
-    bjajbnekgegkne
-    <%= completed.created_at %>
+  <% @completed_forms.each do |completed| %>
+    <li>
+      <%= link_to "#{completed.created_at.strftime('%m/%e/%y - %k:%M%P')} : #{completed.form.title}", completed_form_path(completed) %>
+    </li>
   <% end %>
 </ul>
