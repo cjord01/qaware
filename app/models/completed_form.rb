@@ -16,7 +16,7 @@ class CompletedForm < ActiveRecord::Base
   end
 
   def employee
-    self.form.questions.first.response.text
+    self.form.questions.first.responses.first.text
   end
 
 end
