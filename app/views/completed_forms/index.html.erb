@@ -2,7 +2,7 @@
 <ul>
   <% @completed_forms.each do |completed| %>
     <li>
-      <%= link_to "#{completed.created_at.strftime('%m/%e/%y - %k:%M%P')} : #{completed.form.title}", completed_form_path(completed) %>
+      <%= link_to "#{completed.date} - #{completed.time} : #{completed.title}", completed_form_path(completed) %>
     </li>
   <% end %>
 </ul>
