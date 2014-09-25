@@ -2,10 +2,9 @@ class FormsController < ApplicationController
 
   def index
     @forms = Form.all
-
   end
 
   def show
-    @form = Form.find(params[:id])
+    @empty_form = Form.find(params[:id])
   end
 end
