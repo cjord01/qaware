@@ -29,7 +29,24 @@ gem 'spring',        group: :development
 # gem 'rails-api'
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+
+gem 'faker'
+
+gem 'rspec-rails'
+
+group :development, :test do
+  gem 'capybara', '~> 2.2.1'
+  gem 'shoulda-matchers', require: false
+  gem 'simplecov'
+  gem 'simplecov-console'
+  gem 'database_cleaner', '~> 1.2.0'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 
 # Use unicorn as the app server
 # gem 'unicorn'
