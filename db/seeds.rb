@@ -5,44 +5,48 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Form.delete_all
+Question.delete_all
+CompletedForm.delete_all
+Response.delete_all
 
-Form.create(title: "Bathroom", beacon: 1)
-Form.create(title: "Kitchen", beacon: 2)
-Form.create(title: "Keg", beacon: 3)
+form1 = Form.create(title: "Bathroom", beacon: 1)
+form2 = Form.create(title: "Kitchen", beacon: 2)
+form3 = Form.create(title: "Keg", beacon: 3)
 
-Question.create(text: "Name?", form_id: 1)
-Question.create(text: "Is it clean?", form_id: 1)
-Question.create(text: "Are there papertowels?", form_id: 1)
-Question.create(text: "Is there soap?", form_id: 1)
+question1 = Question.create(text: "Name?", form_id: form1.id)
+question2 = Question.create(text: "Is it clean?", form_id: form1.id)
+question3 = Question.create(text: "Are there papertowels?", form_id: form1.id)
+question4 = Question.create(text: "Is there soap?", form_id: form1.id)
 
-Question.create(text: "Name?", form_id: 2)
-Question.create(text: "Is it clean?", form_id: 2)
-Question.create(text: "Are there dirty dishes?", form_id: 2)
-Question.create(text: "Does the trash need to be dumped?", form_id: 2)
+question5 = Question.create(text: "Name?", form_id: form2.id)
+question6 = Question.create(text: "Is it clean?", form_id: form2.id)
+question7 = Question.create(text: "Are there dirty dishes?", form_id: form2.id)
+question8 = Question.create(text: "Does the trash need to be dumped?", form_id: form2.id)
 
-Question.create(text: "Name?", form_id: 3)
-Question.create(text: "Is there beer?", form_id: 3)
-Question.create(text: "Is the keg functional?", form_id: 3)
-Question.create(text: "What kind of beer is it?", form_id: 3)
+question9 = Question.create(text: "Name?", form_id: form3.id)
+question10 = Question.create(text: "Is there beer?", form_id: form3.id)
+question11 = Question.create(text: "Is the keg functional?", form_id: form3.id)
+question12 = Question.create(text: "What kind of beer is it?", form_id: form3.id)
 
-CompletedForm.create(form_id: 1)
-CompletedForm.create(form_id: 2)
-CompletedForm.create(form_id: 3)
+completed1 = CompletedForm.create(form_id: form1.id)
+completed2 = CompletedForm.create(form_id: form2.id)
+completed3 = CompletedForm.create(form_id: form3.id)
 
-Responses.create(completed_form_id: 1, question_id: 1, text: "Jim")
-Responses.create(completed_form_id: 1, question_id: 2, text: "Yes")
-Responses.create(completed_form_id: 1, question_id: 3, text: "Yes")
-Responses.create(completed_form_id: 1, question_id: 4, text: "Yes")
+Response.create(completed_form_id: completed1.id, question_id: question1.id, text: "Jim")
+Response.create(completed_form_id: completed1.id, question_id: question2.id, text: "Yes")
+Response.create(completed_form_id: completed1.id, question_id: question3.id, text: "Yes")
+Response.create(completed_form_id: completed1.id, question_id: question4.id, text: "Yes")
 
-Responses.create(completed_form_id: 2, question_id: 5, text: "Jim")
-Responses.create(completed_form_id: 2, question_id: 6, text: "Yes")
-Responses.create(completed_form_id: 2, question_id: 7, text: "Yes")
-Responses.create(completed_form_id: 2, question_id: 8, text: "Yes")
+Response.create(completed_form_id: completed2.id, question_id: question5.id, text: "Jim")
+Response.create(completed_form_id: completed2.id, question_id: question6.id, text: "Yes")
+Response.create(completed_form_id: completed2.id, question_id: question7.id, text: "Yes")
+Response.create(completed_form_id: completed2.id, question_id: question8.id, text: "Yes")
 
-Responses.create(completed_form_id: 3, question_id: 9, text: "Jim")
-Responses.create(completed_form_id: 3, question_id: 10, text: "Yes")
-Responses.create(completed_form_id: 3, question_id: 11, text: "Yes")
-Responses.create(completed_form_id: 3, question_id: 12, text: "Yes")
+Response.create(completed_form_id: completed3.id, question_id: question9.id, text: "Jim")
+Response.create(completed_form_id: completed3.id, question_id: question10.id, text: "Yes")
+Response.create(completed_form_id: completed3.id, question_id: question11.id, text: "Yes")
+Response.create(completed_form_id: completed3.id, question_id: question12.id, text: "Yes")
 
 
 
