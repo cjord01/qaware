@@ -1,6 +1,7 @@
 class CompletedFormsController < ApplicationController
+	
   def index
-    @completed = CompletedForm.all
+    @completed_forms = CompletedForm.all
   end
 
   def create
@@ -10,4 +11,11 @@ class CompletedFormsController < ApplicationController
   	end
   	redirect_to forms_path
   end
+
+  def show
+    @completed_form = CompletedForm.find(params[:id])
+    @questions = @completed_form.questions
+    @responses = @completed_form.responses
+  end
+
 end

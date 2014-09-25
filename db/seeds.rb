@@ -15,9 +15,9 @@ form2 = Form.create(title: "Kitchen", beacon: 2)
 form3 = Form.create(title: "Keg", beacon: 3)
 
 question1 = Question.create(text: "Name?", form_id: form1.id)
-question2 = Question.create(text: "Is it clean?", form_id: form1.id)
-question3 = Question.create(text: "Are there papertowels?", form_id: form1.id)
-question4 = Question.create(text: "Is there soap?", form_id: form1.id)
+question2 = Question.create(text: "Are there papertowels?", form_id: form1.id)
+question3 = Question.create(text: "Is there soap?", form_id: form1.id)
+question4 = Question.create(text: "Is everyone wearing shoes?", form_id: form1.id)
 
 question5 = Question.create(text: "Name?", form_id: form2.id)
 question6 = Question.create(text: "Is it clean?", form_id: form2.id)
