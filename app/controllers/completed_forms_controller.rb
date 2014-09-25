@@ -8,8 +8,6 @@ class CompletedFormsController < ApplicationController
   	params[:responses].each do |question_id, response|
   		Response.create!(text: response, question_id: question_id, completed_form_id: @completed.id)
   	end
-
-
   	redirect_to forms_path
   end
 end
