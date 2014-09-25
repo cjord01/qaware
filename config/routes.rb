@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :forms
-  resources :completed_forms, except: [:edit, :new, :update]
+  resources :completed_forms
 
 
 
