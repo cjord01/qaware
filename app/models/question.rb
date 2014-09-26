@@ -1,4 +1,4 @@
 class Question < ActiveRecord::Base
   belongs_to :form
-  has_many :responses
+  has_one :response
 end

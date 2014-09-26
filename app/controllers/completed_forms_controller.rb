@@ -1,11 +1,12 @@
 class CompletedFormsController < ApplicationController
-	
+
   def index
     @completed_forms = CompletedForm.all
   end
 
   def create
-  	@completed = CompletedForm.create!(form_id: params[:responses][:form_id])
+    # raise params.inspect
+  	@completed = CompletedForm.create!(form_id: params[:response][:form_id])
   	params[:responses].each do |question_id, response|
   		Response.create!(text: response, question_id: question_id, completed_form_id: @completed.id)
   	end
