@@ -17,4 +17,9 @@ class CompletedForm < ActiveRecord::Base
     self.form.title
   end
 
+  def zip_it
+    questions = self.questions.map { |q| "QUESTION: #{q.text}"}
+    responses = self.responses.map { |a| "RESPONSE: #{a.text}"}
+    questions.zip(responses)
+  end
 end
