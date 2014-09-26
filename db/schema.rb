@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140925003443) do
+ActiveRecord::Schema.define(version: 20140926145617) do
 
   create_table "completed_forms", force: true do |t|
     t.integer  "form_id"
+    t.integer  "manager_id"
+    t.integer  "employee_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "employees", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.integer  "manager_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -22,6 +32,15 @@ ActiveRecord::Schema.define(version: 20140925003443) do
   create_table "forms", force: true do |t|
     t.string   "title"
     t.text     "beacon"
+    t.integer  "manager_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "managers", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
