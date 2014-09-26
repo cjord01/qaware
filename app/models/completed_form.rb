@@ -15,8 +15,4 @@ class CompletedForm < ActiveRecord::Base
     self.form.title
   end
 
-  def employee
-    self.form.questions.first.responses.first.text
-  end
-
 end

@@ -2,13 +2,12 @@ DATE: <%= @completed_form.date%><br>
 TIME: <%= @completed_form.time%><br>
 <br>
 LOCATION: <%= @completed_form.title %><br>
-EMPLOYEE: <%= @completed_form.employee %><br>
 <br>
-QUESTION 1: <%= @questions[1].text %><br>
-RESPONSE: <%= @responses[1].text %><br>
+QUESTION 1: <%= @questions.first.text %><br>
+RESPONSE: <%= @responses.first.text %><br>
 <br>
-QUESTION 2: <%= @questions[2].text %><br>
-RESPONSE: <%=  @responses[2].text %><br>
+QUESTION 2: <%= @questions.second.text %><br>
+RESPONSE: <%=  @responses.second.text %><br>
 <br>
-QUESTION 3: <%= @questions[3].text %><br>
-RESPONSE: <%=  @responses[3].text %><br>
+QUESTION 3: <%= @questions.third.text %><br>
+RESPONSE: <%=  @responses.third.text %><br>

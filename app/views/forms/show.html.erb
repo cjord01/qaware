@@ -1,6 +1,6 @@
 <form id="empty_form" action="/completed_forms" method="post">
 	<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-	<input type="hidden" name="responses[form_id]"value="<%= @empty_form.id %>">
+	<input type="hidden" name="response[form_id]"value="<%= @empty_form.id %>">
 	<ol>
 		<% @empty_form.questions.each do |question| %>
 			<li><%= question.text %>  <input type="text" name="responses[<%=question.id%>]"> </li>
