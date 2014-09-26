@@ -1,18 +1,21 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 Form.delete_all
 Question.delete_all
 CompletedForm.delete_all
 Response.delete_all
+Manager.delete_all
+Employee.delete_all
 
-form1 = Form.create(title: "Bathroom", beacon: 1)
-form2 = Form.create(title: "Kitchen", beacon: 2)
-form3 = Form.create(title: "Keg", beacon: 3)
+manager = Manager.create(name: "admin", email: "qaware@gmail.com", password: "password", password_confirmation: "password")
+
+mike = Employee.create(name: "Mike Baker", email: Faker::Internet.email, manager_id: manager.id)
+matt = Employee.create(name: "Matt Busch", email: Faker::Internet.email, manager_id: manager.id)
+10.times do
+  Employee.create(name: Faker::Name.name, email:Faker::Internet.email, manager_id: manager.id)
+end
+
+form1 = Form.create(title: "Bathroom", beacon: 1, manager_id: manager.id)
+form2 = Form.create(title: "Kitchen", beacon: 2, manager_id: manager.id)
+form3 = Form.create(title: "Keg", beacon: 3, manager_id: manager.id)
 
 question2 = Question.create(text: "Are there papertowels?", form_id: form1.id)
 question3 = Question.create(text: "Is there soap?", form_id: form1.id)
@@ -26,9 +29,9 @@ question10 = Question.create(text: "Is there beer?", form_id: form3.id)
 question11 = Question.create(text: "Is the keg functional?", form_id: form3.id)
 question12 = Question.create(text: "What kind of beer is it?", form_id: form3.id)
 
-completed1 = CompletedForm.create(form_id: form1.id)
-completed2 = CompletedForm.create(form_id: form2.id)
-completed3 = CompletedForm.create(form_id: form3.id)
+completed1 = CompletedForm.create(form_id: form1.id, manager_id: manager.id, employee_id: mike.id)
+completed2 = CompletedForm.create(form_id: form2.id, manager_id: manager.id, employee_id: matt.id)
+completed3 = CompletedForm.create(form_id: form3.id, manager_id: manager.id, employee_id: mike.id)
 
 Response.create(completed_form_id: completed1.id, question_id: question2.id, text: "Yes")
 Response.create(completed_form_id: completed1.id, question_id: question3.id, text: "Yes")
