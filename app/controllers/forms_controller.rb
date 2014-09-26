@@ -6,5 +6,6 @@ class FormsController < ApplicationController
 
   def show
     @empty_form = Form.find(params[:id])
+    @employees = Employee.all
   end
 end
