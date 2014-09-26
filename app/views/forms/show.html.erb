@@ -6,6 +6,12 @@
   		<% @empty_form.questions.each do |question| %>
   			<li><%= question.text %>  <input type="text" name="responses[<%=question.id%>]"> </li>
   		<% end %>
+
+      <select name="response[employee_id]">
+        <% @employees.each do |employee| %>
+        <option  value="<%= employee.id %>"><%=employee.name%></option>
+        <% end %>
+      </select><br>
   		<input class="take" type="submit" value="Submit">
   	</ol>
   </form>
