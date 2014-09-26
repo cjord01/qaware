@@ -9,6 +9,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav>
+    <div>
+      <%= link_to "Home", root_path %>
+      <span>
+        <%= link_to "Manager Login",  completed_forms_path%>
+      </span>
+    </div>
+  </nav>
 
 <%= yield %>
 
