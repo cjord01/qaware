@@ -7,8 +7,6 @@ Employee.delete_all
 
 manager = Manager.create(name: "rick", email: "rick@gmail.com", password: "password", password_confirmation: "password")
 
-# mike = Employee.create(name: "Mike Baker", email: Faker::Internet.email, manager_id: manager.id)
-# matt = Employee.create(name: "Matt Busch", email: Faker::Internet.email, manager_id: manager.id)
 
 employees = []
 
@@ -95,19 +93,6 @@ beer = ["AntiHero", "Miller", "Heineken", "Budlight"]
 	Response.create(completed_form_id: completed.id, question_id: question23.id, text: rand(1..3))
 
 end
-
-# Responses for Restroom
-# Response.create(completed_form_id: completed1.id, question_id: question2.id, text: "Yes")
-# Response.create(completed_form_id: completed1.id, question_id: question3.id, text: "Yes")
-# Response.create(completed_form_id: completed1.id, question_id: question4.id, text: "Yes")
-
-# Response.create(completed_form_id: completed2.id, question_id: question6.id, text: "Yes")
-# Response.create(completed_form_id: completed2.id, question_id: question7.id, text: "Yes")
-# Response.create(completed_form_id: completed2.id, question_id: question8.id, text: "Yes")
-
-# Response.create(completed_form_id: completed3.id, question_id: question10.id, text: "Yes")
-# Response.create(completed_form_id: completed3.id, question_id: question11.id, text: "Yes")
-# Response.create(completed_form_id: completed3.id, question_id: question12.id, text: "Yes")
 
 
 
