@@ -1,8 +1,10 @@
-<h2>Completed Forms</h2>
-<ul>
-  <% @completed_forms.each do |completed| %>
-    <li>
-      <%= link_to "#{completed.date} - #{completed.time} : #{completed.title}", completed_form_path(completed) %>
-    </li>
-  <% end %>
-</ul>
+<div class="container">
+  <h2>Completed Forms</h2>
+  <ul>
+    <% @completed_forms.each do |completed| %>
+      <li>
+        <%= link_to "#{completed.date} - #{completed.time} : #{completed.title}", completed_form_path(completed) %>
+      </li>
+    <% end %>
+  </ul>
+</div>

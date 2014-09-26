@@ -1,10 +1,12 @@
-<form id="empty_form" action="/completed_forms" method="post">
-	<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-	<input type="hidden" name="response[form_id]"value="<%= @empty_form.id %>">
-	<ol>
-		<% @empty_form.questions.each do |question| %>
-			<li><%= question.text %>  <input type="text" name="responses[<%=question.id%>]"> </li>
-		<% end %>
-		<input class="take" type="submit" value="Submit">
-	</ol>
-</form>
+ <div class="container">
+  <form id="empty_form" action="/completed_forms" method="post">
+  	<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+  	<input type="hidden" name="response[form_id]"value="<%= @empty_form.id %>">
+  	<ol>
+  		<% @empty_form.questions.each do |question| %>
+  			<li><%= question.text %>  <input type="text" name="responses[<%=question.id%>]"> </li>
+  		<% end %>
+  		<input class="take" type="submit" value="Submit">
+  	</ol>
+  </form>
+</div>
