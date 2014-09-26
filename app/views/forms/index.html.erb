@@ -1,3 +1,5 @@
-<% @forms.each do |form| %>
-  <%= link_to "#{form.title}", form_path(form) %><br>
-<% end %>
+<div class="container">
+  <% @forms.each do |form| %>
+    <h2><%= link_to "#{form.title}", form_path(form) %></h2><br>
+  <% end %>
+</div>
