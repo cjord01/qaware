@@ -29,9 +29,9 @@ question10 = Question.create(text: "Is there beer?", form_id: form3.id)
 question11 = Question.create(text: "Is the keg functional?", form_id: form3.id)
 question12 = Question.create(text: "What kind of beer is it?", form_id: form3.id)
 
-completed1 = CompletedForm.create(form_id: form1.id, manager_id: manager.id, employee_id: mike.id)
-completed2 = CompletedForm.create(form_id: form2.id, manager_id: manager.id, employee_id: matt.id)
-completed3 = CompletedForm.create(form_id: form3.id, manager_id: manager.id, employee_id: mike.id)
+completed1 = CompletedForm.create(form_id: form1.id, employee_id: mike.id)
+completed2 = CompletedForm.create(form_id: form2.id, employee_id: matt.id)
+completed3 = CompletedForm.create(form_id: form3.id, employee_id: mike.id)
 
 Response.create(completed_form_id: completed1.id, question_id: question2.id, text: "Yes")
 Response.create(completed_form_id: completed1.id, question_id: question3.id, text: "Yes")

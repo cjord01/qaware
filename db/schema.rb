@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20140926145617) do
 
   create_table "completed_forms", force: true do |t|
     t.integer  "form_id"
-    t.integer  "manager_id"
     t.integer  "employee_id"
     t.datetime "created_at"
     t.datetime "updated_at"
