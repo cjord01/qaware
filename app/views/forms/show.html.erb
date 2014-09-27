@@ -4,7 +4,10 @@
   	<input type="hidden" name="response[form_id]"value="<%= @empty_form.id %>">
   	<ol>
   		<% @empty_form.questions.each do |question| %>
-  			<li><%= question.text %>  <input type="text" name="responses[<%=question.id%>]"> </li>
+  			<li><%= question.text %></li>
+          <% question.possible_responses.each do |possible_response| %>
+          <li><input type="radio" name="responses[<%=question.id%>]" value="<%= possible_response.id %>"> <%=possible_response.text%></li>
+          <% end %>
   		<% end %>
 
       <select name="response[employee_id]">
