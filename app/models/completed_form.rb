@@ -3,7 +3,8 @@ class CompletedForm < ActiveRecord::Base
   has_one :manager, through: :employees
   belongs_to :employee
   has_many :responses
-  has_many :questions, through: :responses
+  has_many :possible_responses, through: :responses
+  has_many :questions, through: :possible_responses
 
   def date
     self.created_at.strftime('%m/%e/%y')
@@ -17,4 +18,9 @@ class CompletedForm < ActiveRecord::Base
     self.form.title
   end
 
+  def zip_it
+    questions = self.questions.map { |q| "QUESTION: #{q.text}"}
+    responses = self.responses.map { |a| "RESPONSE: #{a.possible_response.text}"}
+    questions.zip(responses)
+  end
 end
