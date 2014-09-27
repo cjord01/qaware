@@ -4,9 +4,9 @@ CompletedForm.delete_all
 Response.delete_all
 Manager.delete_all
 Employee.delete_all
+PossibleResponse.delete_all
 
 manager = Manager.create(name: "rick", email: "rick@gmail.com", password: "password", password_confirmation: "password")
-
 
 employees = []
 
@@ -18,80 +18,90 @@ form1 = Form.create(title: "Restroom", beacon: 1, manager_id: manager.id)
 form2 = Form.create(title: "Kitchen", beacon: 2, manager_id: manager.id)
 form3 = Form.create(title: "Keg", beacon: 3, manager_id: manager.id)
 
-
 # Questions for restroom
-question2 = Question.create(text: "How many bottles of hand soap were used today?", form_id: form1.id)
-question3 = Question.create(text: "How many packages of papertowels were used today?", form_id: form1.id)
-question4 = Question.create(text: "Were there papertowels used on the floor?", form_id: form1.id)
-question5 = Question.create(text: "Was there urine around the urinals?", form_id: form1.id)
-question6 = Question.create(text: "Does the restroom smell bad?", form_id: form1.id)
-question7 = Question.create(text: "Is everyone wearing shoes?", form_id: form1.id)
-question8 = Question.create(text: "Were any toilets clogged?", form_id: form1.id)
-question9 = Question.create(text: "Is there gum on the urinal traps?", form_id: form1.id)
+question1 = Question.create(text: "How full is the soap dispenser?", form_id: form1.id)
+	possible_response1 = PossibleResponse.create(question_id: question1.id, text: "Empty", number_value: 0)
+	possible_response2 = PossibleResponse.create(question_id: question1.id, text: "Running Low", number_value: 1)
+	possible_response3 = PossibleResponse.create(question_id: question1.id, text: "Partially Full", number_value: 2)
+	possible_response4 = PossibleResponse.create(question_id: question1.id, text: "Completely Full", number_value: 3)
+
+question2 = Question.create(text: "How many rolls of toilet paper are there?", form_id: form1.id)
+	possible_response5 = PossibleResponse.create(question_id: question2.id, text: "0 Rolls", number_value: 0)
+	possible_response6 = PossibleResponse.create(question_id: question2.id, text: "1-2 Rolls", number_value: 1)
+	possible_response7 = PossibleResponse.create(question_id: question2.id, text: "3-5 Rolls", number_value: 2)
+	possible_response8 = PossibleResponse.create(question_id: question2.id, text: "Rick Rolls", number_value: 3)
+
+question3 = Question.create(text: "How many used papertowels are on the floor?", form_id: form1.id)
+	possible_response9 = PossibleResponse.create(question_id: question3.id, text: "None", number_value: 0)
+	possible_response10 = PossibleResponse.create(question_id: question3.id, text: "A few", number_value: 1)
+	possible_response11 = PossibleResponse.create(question_id: question3.id, text: "A bunch", number_value: 2)
+	possible_response12 = PossibleResponse.create(question_id: question3.id, text: "Let's just stick to hand dryers", number_value: 3)
 
 # Questions for Kitchen
-question10 = Question.create(text: "Is the trash can full?", form_id: form2.id)
-question11 = Question.create(text: "Are there dirty dishes in the sink?", form_id: form2.id)
-question12 = Question.create(text: "Is the microwave a mess?", form_id: form2.id)
-question13 = Question.create(text: "How many bottles of dishsoap was used?", form_id: form2.id)
-question14 = Question.create(text: "Do the fridges have ancient food?", form_id: form2.id)
-question15 = Question.create(text: "How many powerball tabs were used?", form_id: form2.id)
-question16 = Question.create(text: "How many dry food bins are being used?", form_id: form2.id)
+question4 = Question.create(text: "How full is the trash can?", form_id: form2.id)
+	possible_response13 = PossibleResponse.create(question_id: question4.id, text: "Empty", number_value: 0)
+	possible_response14 = PossibleResponse.create(question_id: question4.id, text: "Some garbage", number_value: 1)
+	possible_response15 = PossibleResponse.create(question_id: question4.id, text: "Partially full", number_value: 2)
+	possible_response16 = PossibleResponse.create(question_id: question4.id, text: "It must be a national holiday", number_value: 3)
+
+question5 = Question.create(text: "How many dirty dishes are there in the sink?", form_id: form2.id)
+	possible_response17 = PossibleResponse.create(question_id: question5.id, text: "None", number_value: 0)
+	possible_response18 = PossibleResponse.create(question_id: question5.id, text: "A few", number_value: 1)
+	possible_response19 = PossibleResponse.create(question_id: question5.id, text: "A bunch", number_value: 2)
+	possible_response20 = PossibleResponse.create(question_id: question5.id, text: "Is the dish washer broken?", number_value: 3)
+
+question6 = Question.create(text: "How messy is the microwave?", form_id: form2.id)
+	possible_response21 = PossibleResponse.create(question_id: question6.id, text: "Super clean", number_value: 0)
+	possible_response22 = PossibleResponse.create(question_id: question6.id, text: "Kind of messy", number_value: 1)
+	possible_response23 = PossibleResponse.create(question_id: question6.id, text: "Some food splatters", number_value: 2)
+	possible_response24 = PossibleResponse.create(question_id: question6.id, text: "I must be looking in the garbage can", number_value: 3)
 
 
 # Questions for Keg
-question17 = Question.create(text: "Is there beer?", form_id: form3.id)
-question18 = Question.create(text: "Is the keg functional?", form_id: form3.id)
-question19 = Question.create(text: "Is the drip pan clean?", form_id: form3.id)
-question20 = Question.create(text: "What is the CO2 pressure reading?", form_id: form3.id)
-question21 = Question.create(text: "What kind of beer is it?", form_id: form3.id)
-question22 = Question.create(text: "Are the hoses in good working order?", form_id: form3.id)
-question23 = Question.create(text: "Are the seals still working properly?", form_id: form3.id)
-question24 = Question.create(text: "How many packages of cups were used?", form_id: form3.id)
+question7 = Question.create(text: "How much beer is there?", form_id: form3.id)
+	possible_response25 = PossibleResponse.create(question_id: question7.id, text: "None at all", number_value: 0)
+	possible_response26 = PossibleResponse.create(question_id: question7.id, text: "Half a keg", number_value: 1)
+	possible_response27 = PossibleResponse.create(question_id: question7.id, text: "A party's worth", number_value: 2)
+	possible_response28 = PossibleResponse.create(question_id: question7.id, text: "Full, but don't let Brandon anywhere near it", number_value: 3)
+
+question8 = Question.create(text: "How cold is the beer?", form_id: form3.id)
+	possible_response29 = PossibleResponse.create(question_id: question8.id, text: "Ice cold", number_value: 0)
+	possible_response30 = PossibleResponse.create(question_id: question8.id, text: "Cold", number_value: 1)
+	possible_response31 = PossibleResponse.create(question_id: question8.id, text: "Room Temp", number_value: 2)
+	possible_response32 = PossibleResponse.create(question_id: question8.id, text: "Is this thing filled with coffee?", number_value: 3)
+
+question9 = Question.create(text: "What is the level of CO2 pressure?", form_id: form3.id)
+	possible_response33 = PossibleResponse.create(question_id: question9.id, text: "Low Pressure", number_value: 0)
+	possible_response34 = PossibleResponse.create(question_id: question9.id, text: "Medium Pressure", number_value: 1)
+	possible_response35 = PossibleResponse.create(question_id: question9.id, text: "Under Pressure", number_value: 2)
+	possible_response36 = PossibleResponse.create(question_id: question9.id, text: "Queen feat. David Bowie", number_value: 3)
 
 # Completed forms for restroom
-yes_or_no = ["yes","no"]
 
-15.times do 
+10.times do
 	completed = CompletedForm.create(form_id: form1.id, employee_id: employees.sample.id)
-	Response.create(completed_form_id: completed.id, question_id: question2.id, text: rand(1..4))
-	Response.create(completed_form_id: completed.id, question_id: question3.id, text: rand(1..4))
-	Response.create(completed_form_id: completed.id, question_id: question4.id, text: yes_or_no.sample)
-	Response.create(completed_form_id: completed.id, question_id: question5.id, text: yes_or_no.sample)
-	Response.create(completed_form_id: completed.id, question_id: question6.id, text: yes_or_no.sample)
-	Response.create(completed_form_id: completed.id, question_id: question7.id, text: yes_or_no.sample)
-	Response.create(completed_form_id: completed.id, question_id: question8.id, text: yes_or_no.sample)
-	Response.create(completed_form_id: completed.id, question_id: question9.id, text: yes_or_no.sample)
+	Response.create(completed_form_id: completed.id, possible_response_id: [1,2,3,4].sample)
+	Response.create(completed_form_id: completed.id, possible_response_id: [5,6,7,8].sample)
+	Response.create(completed_form_id: completed.id, possible_response_id: [9,10,11,12].sample)
 end
 
 
 # Completed forms for Kitchen
 
-15.times do 
+10.times do
 	completed = CompletedForm.create(form_id: form2.id, employee_id: employees.sample.id)
-	Response.create(completed_form_id: completed.id, question_id: question10.id, text: yes_or_no.sample )
-	Response.create(completed_form_id: completed.id, question_id: question11.id, text: yes_or_no.sample)
-	Response.create(completed_form_id: completed.id, question_id: question12.id, text: yes_or_no.sample)
-	Response.create(completed_form_id: completed.id, question_id: question13.id, text: rand(1..2))
-	Response.create(completed_form_id: completed.id, question_id: question14.id, text: yes_or_no.sample)
-	Response.create(completed_form_id: completed.id, question_id: question15.id, text: rand(1..3))
-	Response.create(completed_form_id: completed.id, question_id: question16.id, text: rand(45..70))
+ 	Response.create(completed_form_id: completed.id, possible_response_id: [13,14,15,16].sample)
+	Response.create(completed_form_id: completed.id, possible_response_id: [17,18,19,20].sample)
+	Response.create(completed_form_id: completed.id, possible_response_id: [21,22,23,24].sample)
 end
 
 # Completed forms for Keg
-beer = ["AntiHero", "Miller", "Heineken", "Budlight"]
 
-15.times do 
+10.times do
 	completed = CompletedForm.create(form_id: form3.id, employee_id: employees.sample.id)
-	Response.create(completed_form_id: completed.id, question_id: question17.id, text: yes_or_no.sample )
-	Response.create(completed_form_id: completed.id, question_id: question18.id, text: yes_or_no.sample)
-	Response.create(completed_form_id: completed.id, question_id: question19.id, text: yes_or_no.sample)
-	Response.create(completed_form_id: completed.id, question_id: question20.id, text: rand(10..20))
-	Response.create(completed_form_id: completed.id, question_id: question21.id, text: beer.sample)
-	Response.create(completed_form_id: completed.id, question_id: question22.id, text: yes_or_no.sample)
-	Response.create(completed_form_id: completed.id, question_id: question23.id, text: yes_or_no.sample)
-	Response.create(completed_form_id: completed.id, question_id: question23.id, text: rand(1..3))
-
+	Response.create(completed_form_id: completed.id, possible_response_id: [25,26,27,28].sample)
+	Response.create(completed_form_id: completed.id, possible_response_id: [29,30,31,32].sample)
+	Response.create(completed_form_id: completed.id, possible_response_id: [33,34,35,36].sample)
 end
 
 
