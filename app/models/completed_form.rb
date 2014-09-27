@@ -20,7 +20,7 @@ class CompletedForm < ActiveRecord::Base
 
   def zip_it
     questions = self.questions.map { |q| "QUESTION: #{q.text}"}
-    responses = self.responses.map { |a| "RESPONSE: #{a.text}"}
+    responses = self.responses.map { |a| "RESPONSE: #{a.possible_response.text}"}
     questions.zip(responses)
   end
 end

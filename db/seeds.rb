@@ -1,3 +1,5 @@
+
+
 Form.delete_all
 Question.delete_all
 CompletedForm.delete_all
@@ -77,9 +79,10 @@ question9 = Question.create(text: "What is the level of CO2 pressure?", form_id:
 	possible_response36 = PossibleResponse.create(question_id: question9.id, text: "Queen feat. David Bowie", number_value: 3)
 
 # Completed forms for restroom
-
+day = 0
 10.times do
-	completed = CompletedForm.create(form_id: form1.id, employee_id: employees.sample.id)
+	day += 1
+	completed = CompletedForm.create(form_id: form1.id, employee_id: employees.sample.id, created_at: Date.today + day)
 	Response.create(completed_form_id: completed.id, possible_response_id: [1,2,3,4].sample)
 	Response.create(completed_form_id: completed.id, possible_response_id: [5,6,7,8].sample)
 	Response.create(completed_form_id: completed.id, possible_response_id: [9,10,11,12].sample)
@@ -89,7 +92,8 @@ end
 # Completed forms for Kitchen
 
 10.times do
-	completed = CompletedForm.create(form_id: form2.id, employee_id: employees.sample.id)
+		day += 1
+	completed = CompletedForm.create(form_id: form2.id, employee_id: employees.sample.id, created_at: Date.today + day)
  	Response.create(completed_form_id: completed.id, possible_response_id: [13,14,15,16].sample)
 	Response.create(completed_form_id: completed.id, possible_response_id: [17,18,19,20].sample)
 	Response.create(completed_form_id: completed.id, possible_response_id: [21,22,23,24].sample)
@@ -98,7 +102,8 @@ end
 # Completed forms for Keg
 
 10.times do
-	completed = CompletedForm.create(form_id: form3.id, employee_id: employees.sample.id)
+		day += 1
+	completed = CompletedForm.create(form_id: form3.id, employee_id: employees.sample.id, created_at: Date.today + day)
 	Response.create(completed_form_id: completed.id, possible_response_id: [25,26,27,28].sample)
 	Response.create(completed_form_id: completed.id, possible_response_id: [29,30,31,32].sample)
 	Response.create(completed_form_id: completed.id, possible_response_id: [33,34,35,36].sample)
