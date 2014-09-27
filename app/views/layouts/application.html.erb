@@ -13,12 +13,13 @@
 </head>
 <body>
   <nav>
-    <div>
-      <%= link_to "Home", root_path %>
-      <span>
-        <%= link_to "Manager Login",  completed_forms_path%>
-      </span>
-    </div>
+    <% if session[:manager_id] %>
+      <div>
+        <span>
+          <%= link_to "Log Out",  logout_path%>
+        </span>
+      </div>
+    <% end %>
   </nav>
 
 <%= yield %>
