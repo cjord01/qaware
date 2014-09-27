@@ -2,18 +2,55 @@
 //   box-sizing: border-box;
 // }
 
+// body {
+//   color: white;
+// }
+
 // h1 {
 //   font-size: 8rem;
 // }
 
 // .container {
-//   margin: 0 auto;
+//   margin: 1em auto;
 //   border: black solid 1px;
-//   width: 100%;
+//   width: 80%;
 //   max-width: 1200px;
-//   padding: 0 1em;
+//   padding: 1em;
+//   background-color: #8E44AD;
+// }
+
+// .container a:hover {
+//   color: black;
+// }
+
+// table {
+//   margin: 1em auto;
+//   border: black solid 1px;
+//   width: 75%;
+//   padding: 1em;
+//   // max-width: 1200px;
+//   // padding: 0 1em;
+//   // background-color: #8E44AD;
+// }
+
+// nav {
+//   padding: 1rem 0;
+//   background-color: #8E44AD;
+// }
+
+// nav a {
+//   font-size: 1.75rem;
+//   padding: 0 2rem;
 // }
 
 // nav span {
 //   float: right;
+// }
+
+// nav a:hover {
+//   color: black;
+// }
+
+// th {
+//   font-weight: bold;
 // }
