@@ -1,45 +1,26 @@
+path {
+	stroke: steelblue;
+	stroke-width: 1;
+	fill: none;
+}
 
-.grid .tick {
-	stroke: lightgrey;
-	opacity: 0.7;
-	shape-rendering: crispEdges;
+.axis {
+  shape-rendering: crispEdges;
 }
- 
-.grid path {
-	stroke-width: 0;
+
+.x.axis line {
+  stroke: lightgrey;
 }
- 
-.axis path {
-	fill: none;
-	stroke: #bbb;
-	shape-rendering: crispEdges;
+
+.x.axis .minor {
+  stroke-opacity: .5;
 }
- 
-.axis text {
-	fill: #555;
+
+.x.axis path {
+  display: none;
 }
- 
-.axis line {	
-	stroke: #e7e7e7;
-	shape-rendering: crispEdges;
-}
- 
-.axis .axis-label {
-	font-size: 14px;
-}
- 
-.line {
-	fill: none;
-	stroke-width: 1.5px;
-}
- 
-.dot {
-	/* consider the stroke-with the mouse detect radius? */
-	stroke: transparent;
-	stroke-width: 10px;  
-	cursor: pointer;
-}
- 
-.dot:hover {
-	stroke: rgba(68, 127, 255, 0.3);
+
+.y.axis line, .y.axis path {
+  fill: none;
+  stroke: #000;
 }

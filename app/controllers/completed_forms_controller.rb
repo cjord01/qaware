@@ -3,7 +3,7 @@ class CompletedFormsController < ApplicationController
   def index
 
     @completed_forms = CompletedForm.all
-    @forms = Form.all
+    @restroom_form = Form.where(title: "Restroom")
 
     if session[:manager_id]
       @completed_forms = CompletedForm.all

@@ -14,8 +14,11 @@
 </div>
 
 
-<div class = "sidebar" >
-  <div class="chart"></div>
+<div class="sidebar" >
+  <div id="graph" class="agraph">
+    <script> var data = <%= @restroom_form.first.first_values %> </script>
+    <h2><%=@restroom_form.first.title%></h2>
+    <h3><%=@restroom_form.first.questions.first.text %></h3>
+  </div>
 
 </div>
-<script> var dataset = 4  </script>
