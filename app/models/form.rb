@@ -13,7 +13,14 @@ class Form < ActiveRecord::Base
 
 	def third_values
 		self.questions.third.responses.map(&:possible_response).map(&:number_value)
+	end
+
+	def first_get_possible
+		self.questions.first.possible_responses.map(&:text)
 	end 
 
-	
+	def get_complete_dates
+		self.completed_forms.map(&:date)
+	end
+
 end

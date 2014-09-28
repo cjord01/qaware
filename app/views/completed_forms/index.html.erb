@@ -16,9 +16,13 @@
 
 <div class="sidebar" >
   <div id="graph" class="agraph">
-    <script> var data = <%= @restroom_form.first.first_values %> </script>
+    <script>var data = <%= @restroom_form.first.first_values %></script>
+    <script>var yLabels = <%= raw @restroom_form.first.first_get_possible%>
+    var xLabels = <%= raw @restroom_form.first.get_complete_dates %>
+    </script>
+
     <h2><%=@restroom_form.first.title%></h2>
-    <h3><%=@restroom_form.first.questions.first.text %></h3>
+    <script>var title = "<%=@restroom_form.first.questions.first.text%>" </script>
   </div>
 
 </div>
