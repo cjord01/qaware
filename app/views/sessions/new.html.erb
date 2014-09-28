@@ -1,15 +1,8 @@
-<div class="container">
-  <h1>Welcome to QA-ware</h1>
-
-  <h3>Login</h3>
-
+<div class="welcomepage">
+  <h1>QAware</h1>
   <%= form_tag("/login", :method => "post") do %>
-  <div class="form-group">
-    <%= text_field_tag :name, nil, placeholder: :name %><br>
-  </div>
-  <div class="form-group">
-    <%= password_field_tag(:password, nil, placeholder: :password)%><br>
-  </div>
-    <%= submit_tag(:login) %>
+    <%= text_field_tag :name, nil, placeholder: :name, class: "form-control" %>
+    <%= password_field_tag :password, nil, placeholder: :password, class: "form-control"%><br>
+    <%= submit_tag :login, class: "btn btn-hg btn-primary" %>
   <% end %>
 </div>

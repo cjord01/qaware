@@ -1,5 +1,5 @@
-<div class="container">
-  <h4> <%= link_to "View Employees", employees_path %> | <%= link_to "Add an Employee", new_employee_path %></h4>
+<div class="index_page">
+  <h4> <%= link_to "View Employees", employees_path, class: "btn btn-hg btn-primary" %> <%= link_to "Add an Employee", new_employee_path, class: "btn btn-hg btn-primary" %></h4>
   <h2>Completed Forms</h2>
   <ul>
     <% @completed_forms.each do |completed| %>
@@ -9,7 +9,7 @@
     <% end %>
   </ul>
 
-	
+
 
 	<div class="chart"></div>
 </div>

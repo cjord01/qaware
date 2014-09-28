@@ -13,12 +13,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav>
+  <nav class="navbar navbar-primary" role="navigation">
     <% if session[:manager_id] %>
       <div>
-        <%= link_to "Home", completed_forms_path %>
+        <%= link_to "QAware", completed_forms_path, class: "navbar-header" %>
         <span>
-          <%= link_to "Log Out",  logout_path%>
+          <%= link_to "Log Out",  logout_path, class: "btn btn-danger navbar-btn"%>
         </span>
       </div>
     <% end %>

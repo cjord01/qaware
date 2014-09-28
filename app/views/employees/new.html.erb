@@ -1,10 +1,10 @@
-<div class="container">
+<div class="new_employee">
   <%= form_for @employee do |f| %>
-    <%= f.hidden_field :manager_id, value: @manager.id %><br>
+    <%= f.hidden_field :manager_id, value: @manager.id %>
     <%= f.label :name %>
-    <%= f.text_field :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
     <%= f.label :email %>
-    <%= f.text_field :email %><br>
-    <%= f.submit %><br>
+    <%= f.text_field :email, class: "form-control" %><br>
+    <%= f.submit class: "btn btn-hg btn-primary"%>
   <% end %>
 </div>
