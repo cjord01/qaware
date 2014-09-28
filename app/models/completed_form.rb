@@ -11,7 +11,7 @@ class CompletedForm < ActiveRecord::Base
   end
 
   def time
-    self.created_at.strftime('%k:%M%P')
+    self.created_at.strftime('%l:%M%P')
   end
 
   def title
