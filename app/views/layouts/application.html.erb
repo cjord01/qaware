@@ -3,26 +3,26 @@
 <head>
   <title>Qaware</title>
 
-  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.2/build/cssreset/cssreset-min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.2/build/cssreset/cssreset-min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link href="dist/css/flat-ui.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="navbar navbar-primary" role="navigation">
-    <% if session[:manager_id] %>
-      <div>
-        <%= link_to "QAware", completed_forms_path, class: "navbar-header" %>
-        <span>
-          <%= link_to "Log Out",  logout_path, class: "btn btn-danger navbar-btn"%>
-        </span>
-      </div>
-    <% end %>
-  </nav>
+    <nav class="navbar navbar-primary" role="navigation">
+      <% if session[:manager_id] %>
+        <div>
+          <%= link_to "QAware", completed_forms_path, class: "navbar-header" %>
+          <span>
+            <%= link_to "Log Out",  logout_path, class: "btn btn-danger navbar-btn"%>
+          </span>
+        </div>
+      <% end %>
+    </nav>
 
 <%= yield %>
 
