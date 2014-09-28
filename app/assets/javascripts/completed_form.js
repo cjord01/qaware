@@ -1,6 +1,13 @@
 $(function(){
-	var m = [80, 80, 80, 150]; // margins
-	var w = 500 - m[1] - m[3]; // width: margin.right - margin.left
+	function createGraph(data, xLabels, yLabels, title){
+
+	var data = data;
+	var xLabels = xLabels;
+	var yLabels = yLabels;
+	var title = title;
+
+	var m = [80, 80, 80, 250]; // margins
+	var w = 700 - m[1] - m[3]; // width: margin.right - margin.left
 	var h = 400 - m[0] - m[2]; // height: margin.top - margin.bottom
 		
 	var x = d3.scale.linear()			// by default will create a domain [0,1] and range [1,0]
@@ -54,8 +61,6 @@ $(function(){
 
 
 	// create left yAxis
-	// var yLabels = ["label1", "another", "wegeg", "werwrw"];
-	// console.log(yLabels.length)
 	var yAxisLeft = d3.svg.axis().scale(y)
 						.tickFormat(function(index) {
 							return yLabels[index]
@@ -73,11 +78,27 @@ $(function(){
     	.attr ("x", (w/2))
     	.attr("y", 0 - (m[0]/2))
     	.attr("text-anchor", "middle")
-    	.style("font-size", "1.5rem")
+    	.style("font-size", "1.8rem")
+    	.style("font-weight", "bold")
     	.text(title)
 	
 	
 	graph.append("svg:path").attr("d", line(data));
+	}
+
+	createGraph(rest_q1_data, rest_q1_xLabels, rest_q1_yLabels, rest_q1_title);
+	createGraph(rest_q2_data, rest_q2_xLabels, rest_q2_yLabels, rest_q2_title);
+	createGraph(rest_q3_data, rest_q3_xLabels, rest_q3_yLabels, rest_q3_title);
+
+	createGraph(kitchen_q1_data, kitchen_q1_xLabels, kitchen_q1_yLabels, kitchen_q1_title);
+	createGraph(kitchen_q2_data, kitchen_q2_xLabels, kitchen_q2_yLabels, kitchen_q2_title);
+	createGraph(kitchen_q3_data, kitchen_q3_xLabels, kitchen_q3_yLabels, kitchen_q3_title);
+
+	createGraph(keg_q1_data, keg_q1_xLabels, keg_q1_yLabels, keg_q1_title);
+	createGraph(keg_q2_data, keg_q2_xLabels, keg_q2_yLabels, keg_q2_title);
+	createGraph(keg_q3_data, keg_q3_xLabels, keg_q3_yLabels, keg_q3_title);
+
+
 });
 
 

@@ -19,6 +19,14 @@ class Form < ActiveRecord::Base
 		self.questions.first.possible_responses.map(&:text)
 	end 
 
+	def second_get_possible
+		self.questions.second.possible_responses.map(&:text)
+	end 
+
+	def third_get_possible
+		self.questions.third.possible_responses.map(&:text)
+	end 
+
 	def get_complete_dates
 		self.completed_forms.map(&:date)
 	end
