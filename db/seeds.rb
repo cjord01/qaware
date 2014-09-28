@@ -16,9 +16,9 @@ employees = []
   employees << Employee.create(name: Faker::Name.name, email:Faker::Internet.email, manager_id: manager.id)
 end
 
-form1 = Form.create(title: "Restroom", beacon: 1, manager_id: manager.id)
-form2 = Form.create(title: "Kitchen", beacon: 2, manager_id: manager.id)
-form3 = Form.create(title: "Keg", beacon: 3, manager_id: manager.id)
+form1 = Form.create(title: "Restroom", manager_id: manager.id)
+form2 = Form.create(title: "Kitchen", manager_id: manager.id)
+form3 = Form.create(title: "Keg", manager_id: manager.id)
 
 # Questions for restroom
 question1 = Question.create(text: "How full is the soap dispenser?", form_id: form1.id)
