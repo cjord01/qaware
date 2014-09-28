@@ -2,7 +2,7 @@ class CompletedFormsController < ApplicationController
 
   def index
     if session[:manager_id]
-      @completed_forms = CompletedForm.all
+      @completed_forms = CompletedForm.order('created_at DESC').all
     else
       redirect_to root_path
     end

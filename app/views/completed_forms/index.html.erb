@@ -1,15 +1,12 @@
 <div class="index_page">
   <h4> <%= link_to "View Employees", employees_path, class: "btn btn-hg btn-primary" %> <%= link_to "Add an Employee", new_employee_path, class: "btn btn-hg btn-primary" %></h4>
   <h2>Completed Forms</h2>
-  <ul>
+
     <% @completed_forms.each do |completed| %>
-      <li>
-        <%= link_to "#{completed.date} - #{completed.time} : #{completed.title}", completed_form_path(completed) %>
-      </li>
+    <ul>
+      <li><%= link_to "#{completed.date} - #{completed.time} : #{completed.title}", completed_form_path(completed) %></li>
+    </ul>
     <% end %>
-  </ul>
-
-
 
 	<div class="chart"></div>
 </div>
