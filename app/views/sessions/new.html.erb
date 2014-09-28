@@ -1,8 +1,8 @@
 <div class="welcomepage">
   <h1>QAware</h1>
   <%= form_tag("/login", :method => "post") do %>
-    <%= text_field_tag :name, nil, placeholder: :name, class: "form-control" %>
-    <%= password_field_tag :password, nil, placeholder: :password, class: "form-control"%><br>
-    <%= submit_tag :login, class: "btn btn-hg btn-primary" %>
+    <%= text_field_tag :name, nil, placeholder: :Name, class: "form-control" %><br>
+    <%= password_field_tag :password, nil, placeholder: :Password, class: "form-control"%><br>
+    <%= submit_tag :Login, class: "btn btn-hg btn-primary" %>
   <% end %>
 </div>
