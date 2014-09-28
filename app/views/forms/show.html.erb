@@ -1,11 +1,17 @@
  <div class="container">
   <h2><%= @empty_form.title %></h2>
+
   <form id="empty_form" action="/completed_forms" method="post">
-    <label>Employee <select name="response[employee_id]">
-      <% @employees.each do |employee| %>
-      <option  value="<%= employee.id %>"><%=employee.name%></option>
-      <% end %><br>
-    </select></label><br><br>
+    <label class="btn-group">
+      <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="response[employee_id]">
+        <% @employees.each do |employee| %>
+        <option  class="dropdown-menu" value="<%= employee.id %>">
+          <%=employee.name%>
+        </option>
+        <% end %><br>
+      </select>
+    </label><br><br>
+
     <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
     <input type="hidden" name="response[form_id]"value="<%= @empty_form.id %>">
     <ol>
@@ -17,7 +23,7 @@
           <br>
       <% end %>
 
-  		<input class="take" type="submit" value="Submit">
+  		<input class="btn btn-hg btn-primary" type="submit" value="Submit">
   	</ol>
   </form>
 </div>

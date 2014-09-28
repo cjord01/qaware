@@ -1,7 +1,6 @@
-<div class="container">
-  <h2>Welcome to <br> QA-ware</h2>
-  <h4>Select a form:</h4>
+<div class="welcomepage">
+  <h1>QAware</h1>
   <% @forms.each do |form| %>
-    <h3><%= link_to "#{form.title}", form_path(form) %></h3>
+    <h4><%= link_to "#{form.title}", form_path(form) %></h4>
   <% end %>
 </div>
