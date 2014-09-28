@@ -2,6 +2,7 @@ class CompletedFormsController < ApplicationController
 
   def index
     @completed_forms = CompletedForm.all
+    @forms = Form.all
   end
 
   def create

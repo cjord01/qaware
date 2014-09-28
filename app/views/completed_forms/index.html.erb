@@ -1,6 +1,5 @@
 <div class="container">
   <h4> <%= link_to "View Employees", employees_path %> | <%= link_to "Add an Employee", new_employee_path %></h4>
-  <h2>Completed Forms</h2>
   <ul>
     <% @completed_forms.each do |completed| %>
       <li>
@@ -8,8 +7,11 @@
       </li>
     <% end %>
   </ul>
+</div>
 
-	
+
+<div class = "sidebar" >
+  <div class="chart"></div>
 
 </div>
-<svg class="chart"></div>
+<script> var dataset = 4  </script>
