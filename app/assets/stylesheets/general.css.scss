@@ -15,12 +15,18 @@ a {
   font-weight: bold;
 }
 
+.link_buttons {
+  width: 35em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .employee_index {
   width: 35em;
   margin-left: auto;
   margin-right: auto;
   padding: 1em;
-  -webkit-border-radius: 10px;
+  -webkit-border-radius: 5px;
   border-color: #8E44AD;
   border: solid 1px;
   background-color: #8E44AD;

@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140927005215) do
+ActiveRecord::Schema.define(version: 20140928175517) do
+
+  create_table "beacons", force: true do |t|
+    t.string   "location"
+    t.string   "uuid"
+    t.integer  "major"
+    t.integer  "minor"
+    t.integer  "form_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "completed_forms", force: true do |t|
     t.integer  "form_id"
@@ -30,7 +40,6 @@ ActiveRecord::Schema.define(version: 20140927005215) do
 
   create_table "forms", force: true do |t|
     t.string   "title"
-    t.text     "beacon"
     t.integer  "manager_id"
     t.datetime "created_at"
     t.datetime "updated_at"
