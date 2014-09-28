@@ -1,12 +1,28 @@
-<div class="index_page">
-  <h4> <%= link_to "View Employees", employees_path, class: "btn btn-hg btn-primary" %> <%= link_to "Add an Employee", new_employee_path, class: "btn btn-hg btn-primary" %></h4>
-  <h2>Completed Forms</h2>
 
-    <% @completed_forms.each do |completed| %>
-    <ul>
-      <li><%= link_to "#{completed.date} - #{completed.time} : #{completed.title}", completed_form_path(completed) %></li>
-    </ul>
-    <% end %>
-
-	<div class="chart"></div>
+<div class="container">
+  <div class="link_buttons">
+    <h4> <%= link_to "View Employees", employees_path, class: "btn btn-hg btn-primary" %> <%= link_to "Add an Employee", new_employee_path, class: "btn btn-hg btn-primary" %></h4>
+  </div>
+  <div class="employee_index">
+    <table class="table">
+    <h2>Completed Forms</h2>
+      <tr>
+        <th></th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Location</th>
+        <th>Employee</th>
+      </tr>
+      <% @completed_forms.each do |completed| %>
+      <tr>
+        <td><%= link_to "Select", completed_form_path(completed) %></td>
+        <td><%=  completed.date %></td>
+        <td><%=  completed.time %></td>
+        <td><%=  completed.title %></td>
+        <td><%=  completed.employee.name %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="chart"></div>
 </div>

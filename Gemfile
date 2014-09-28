@@ -39,6 +39,8 @@ gem 'faker'
 
 gem 'rspec-rails'
 
+gem "handles_sortable_columns"
+
 group :development, :test do
   gem 'capybara', '~> 2.2.1'
   gem 'shoulda-matchers', require: false
