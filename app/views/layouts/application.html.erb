@@ -8,18 +8,21 @@
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
+  <link href="dist/css/flat-ui.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav>
-    <div>
-      <%= link_to "Home", root_path %>
-      <span>
-        <%= link_to "Manager Login",  completed_forms_path%>
-      </span>
-    </div>
+  <nav class="navbar navbar-primary" role="navigation">
+    <% if session[:manager_id] %>
+      <div>
+        <%= link_to "QAware", completed_forms_path, class: "navbar-header" %>
+        <span>
+          <%= link_to "Log Out",  logout_path, class: "btn btn-danger navbar-btn"%>
+        </span>
+      </div>
+    <% end %>
   </nav>
 
 <%= yield %>

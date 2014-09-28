@@ -1,8 +1,16 @@
 class CompletedFormsController < ApplicationController
 
   def index
+
     @completed_forms = CompletedForm.all
     @forms = Form.all
+
+    if session[:manager_id]
+      @completed_forms = CompletedForm.all
+    else
+      redirect_to root_path
+    end
+
   end
 
   def create
@@ -15,9 +23,13 @@ class CompletedFormsController < ApplicationController
   end
 
   def show
-    @completed_form = CompletedForm.find(params[:id])
-    @questions = @completed_form.questions
-    @responses = @completed_form.responses
+    if session[:manager_id]
+      @completed_form = CompletedForm.find(params[:id])
+      @questions = @completed_form.questions
+      @responses = @completed_form.responses
+    else
+      redirect_to root_path
+    end
   end
 
 end

@@ -18,4 +18,5 @@ class Form < ActiveRecord::Base
 	def get_values
 		self.questions.map {|question| question.responses.map { |response| response.possible_response}.map { |choice| choice.number_value }}
 	end
+
 end

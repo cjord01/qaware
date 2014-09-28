@@ -1,12 +1,20 @@
 class EmployeesController < ApplicationController
 
   def index
-    @employees = Employee.all
+    if session[:manager_id]
+      @employees = Employee.all
+    else
+      redirect_to root_path
+    end
   end
 
   def new
-    @employee = Employee.new
-    @manager = Manager.first
+    if session[:manager_id]
+      @employee = Employee.new
+      @manager = Manager.find(session[:manager_id])
+    else
+      redirect_to root_path
+    end
   end
 
   def create
