@@ -92,6 +92,10 @@ function createGraph(data, xLabels, yLabels, title){
 
 }
 
+function updateCompletedForms(){
+	// $("completed_forms").append()
+	setTimeout							// setInterval can do the same thing as setTimeout but setTimeout allows 
+}
 
 
 $(function(){
@@ -109,6 +113,9 @@ $(function(){
 	createGraph(keg_q2_data, keg_q2_xLabels, keg_q2_yLabels, keg_q2_title);
 	createGraph(keg_q3_data, keg_q3_xLabels, keg_q3_yLabels, keg_q3_title);
 
+	if ($("#completed_form").length > 0){
+		setTimeout(updateCompletedForms, 3000);
+	}
 
 });
 

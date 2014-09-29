@@ -14,13 +14,10 @@
         <th>Employee</th>
       </tr>
       <% @completed_forms.each do |completed| %>
-      <tr>
-        <td><%= link_to "Select", completed_form_path(completed) %></td>
-        <td><%=  completed.date %></td>
-        <td><%=  completed.time %></td>
-        <td><%=  completed.title %></td>
-        <td><%=  completed.employee.name %></td>
-      </tr>
+          <tr class="completed_forms">
+            <%= render :partial => 'completed_forms/completed_form', locals: {completed: completed} %>
+          </tr>
+
       <% end %>
     </table>
   </div>
