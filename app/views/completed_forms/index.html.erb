@@ -16,7 +16,7 @@
       </tr>
       <% @completed_forms.each do |completed| %>
       <tr>
-        <td><%= link_to "Select", completed_form_path(completed) %></td>
+        <td><%= link_to "Select", completed_form_path(completed), class: 'button' %></td>
         <td><%=  completed.date %></td>
         <td><%=  completed.time %></td>
         <td><%=  completed.title %></td>
