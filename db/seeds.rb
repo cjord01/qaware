@@ -78,7 +78,7 @@ question9 = Question.create(text: "What is the level of CO2 pressure?", form_id:
 	possible_response35 = PossibleResponse.create(question_id: question9.id, text: "Under Pressure", number_value: 2)
 	possible_response36 = PossibleResponse.create(question_id: question9.id, text: "Queen feat. David Bowie", number_value: 3)
 
-# Completed forms for restroom
+Completed forms for restroom
 day = 0
 10.times do
 	day += 1
@@ -89,7 +89,7 @@ day = 0
 end
 
 
-# Completed forms for Kitchen
+Completed forms for Kitchen
 
 10.times do
 		day += 1
@@ -99,7 +99,7 @@ end
 	Response.create(completed_form_id: completed.id, possible_response_id: [21,22,23,24].sample)
 end
 
-# Completed forms for Keg
+Completed forms for Keg
 
 10.times do
 		day += 1

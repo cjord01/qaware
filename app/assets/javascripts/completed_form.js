@@ -92,10 +92,17 @@ function createGraph(data, xLabels, yLabels, title){
 
 }
 
-function updateCompletedForms(){
-	// $("completed_forms").append()
-	setTimeout							// setInterval can do the same thing as setTimeout but setTimeout allows 
-}
+// function updateCompletedForms(){
+// 	$.getScript("/completed_forms.js")
+// 	// $.ajax({
+// 	// 	url: '/completed_forms',
+// 	// 	dataType: "html",
+// 	// 	success: success
+// 	// });
+
+// 	// $("completed_forms").append()
+// 	setTimeout(updateCompletedForms, 3000)							// setInterval can do the same thing as setTimeout but setTimeout will only trigger once just in case request takes more time 
+// }
 
 
 $(function(){
@@ -113,9 +120,27 @@ $(function(){
 	createGraph(keg_q2_data, keg_q2_xLabels, keg_q2_yLabels, keg_q2_title);
 	createGraph(keg_q3_data, keg_q3_xLabels, keg_q3_yLabels, keg_q3_title);
 
-	if ($("#completed_form").length > 0){
-		setTimeout(updateCompletedForms, 3000);
-	}
+	
+
+	(function refresh() {
+			setTimeout(function(){
+			var url = "/completed_forms";
+			var request = $.ajax(url, {
+				method: "GET"
+			});
+
+			request.done(function(response){
+				console.log(response)
+				// renderNewCompletedForm(response);
+				refresh();
+			});
+		}, 3000);
+	})();
+
+	// var renderNewCompletedForm = function(messages){
+	// 	var feed 
+	// }
+
 
 });
 
