@@ -5,8 +5,8 @@ function createGraph(data, xLabels, yLabels, title){
 	var yLabels = yLabels;
 	var title = title;
 
-	var m = [80, 80, 80, 250]; 		// margins
-	var width = 700 - m[1] - m[3]; 	// width: margin.right - margin.left
+	var m = [80, 80, 80, 320]; 		// margins
+	var width = 750 - m[1] - m[3]; 	// width: margin.right - margin.left
 	var height = 450 - m[0] - m[2]; // height: margin.top - margin.bottom
 		
 	var x = d3.scale.linear()			// by default will create a domain [0,1] and range [1,0]
