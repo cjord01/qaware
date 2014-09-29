@@ -1,8 +1,40 @@
-// .chart {
-// 	font: 10px sans-serif;
-// 	background-color: steelblue;
-// 	text-align: right;
-// 	padding: 3px;
-// 	margin: 1px;
-// 	color: white;
+path {
+	stroke: steelblue;
+	stroke-width: 1;
+	fill: none;
+}
+
+.axis {
+  shape-rendering: crispEdges;
+}
+
+.x.axis line {
+  stroke: lightgrey;
+}
+
+.x.axis .minor {
+  stroke-opacity: .5;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.y.axis line, .y.axis path {
+  fill: none;
+  stroke: #000;
+}
+
+.tick {
+	width: 10%;
+}
+
+// svg {
+// 	margin: 0 auto;
+// 	display: inline-block;
+// 	max-width: 50%;
+// }
+
+// #graph {
+// 	max-width: 50%;
 // }

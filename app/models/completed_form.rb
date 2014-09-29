@@ -27,4 +27,5 @@ class CompletedForm < ActiveRecord::Base
     responses = self.responses.map { |a| "RESPONSE: #{a.possible_response.text}"}
     questions.zip(responses)
   end
+
 end

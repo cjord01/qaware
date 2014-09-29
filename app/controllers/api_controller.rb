@@ -1,14 +1,14 @@
 class ApiController < ApplicationController
 
   def hello
-    # respond_to do |format|
-    #   format.json do
-    #     render :json => {
-    #       :message => "yippy kai ay motherfather!",
-    #       :html => "<b>whatthisbe</b>"
-    #     }.to_json
-    #   end
-    # end
+
+ 
+    @forms = {
+      form1: "this is form 1",
+      form2: "this is form 2",
+      form3: "this is form 3"
+    }
+
     data = {
       uuid: "FFC26D16-3710-4922-80CB-7E53E92443E4",
       major: 1,
