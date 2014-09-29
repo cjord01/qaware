@@ -8,7 +8,7 @@
     <% @employees.each do |employee| %>
     <tr>
       <td><%= employee.name %></td>
-      <td><%= employee.email %></td>
+      <td><%= mail_to "#{employee.email}" %></td>
     </tr>
     <% end %>
   </table>
