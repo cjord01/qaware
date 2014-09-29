@@ -14,8 +14,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     get 'forms' => 'forms#index'
-    get 'sessions/new' => 'sessions#create'  # DEBUGGING - take this out eventually
-    post 'sessions/new' => 'sessions#create'
+    post 'sessions' => 'sessions#create'
+    put 'beacons' => 'beacons#update'
+    delete 'beacons' => 'beacons#destroy'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

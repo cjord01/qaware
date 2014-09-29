@@ -1,12 +1,24 @@
 class Api::SessionsController < ApplicationController
   def create
-    # user = User.find_by(name: params[:name])
-    # if user && user.authenticate(params[:password])
-    #   render json: user.to_json
+    # employee = Employee.find_by(name: params[:name])
+    # if employee && employee.authenticate(params[:password])
+    #   render json: employee.to_json
     # else
     #   401
     # end
-    employee = Employee.first
-    render json: employee.to_json
+    employee = Employee.find_by(name: params[:name])
+    if employee
+        render json: employee.to_json
+    else
+        401
+    end
   end
 end
+
+# TEST
+=begin
+curl -XPOST -H "Content-Type: application/json" "localhost:3000/api/sessions" -d '
+{
+  "name": "brandon"
+}'
+=end

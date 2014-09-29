@@ -14,9 +14,9 @@
 
 # CREATE EMPLOYEES
 	employees = []
-	employees << Employee.create(name: "Brandon Manson", email: "mansonbrandon@gmail.com", manager_id: manager.id)
-	employees << Employee.create(name: "Zach Taylor", email: "taylorzr@gmail.com", manager_id: manager.id)
-	employees << Employee.create(name: "Clayton Jordan", email: "clayjchicago@gmail.com", manager_id: manager.id)
+	employees << Employee.create(name: "brandon", email: "mansonbrandon@gmail.com", manager_id: manager.id)
+	employees << Employee.create(name: "zach", email: "taylorzr@gmail.com", manager_id: manager.id)
+	employees << Employee.create(name: "clayton", email: "clayjchicago@gmail.com", manager_id: manager.id)
 	employees << Employee.create(name: "Mike Baker", email: "mikebaker@devbootcamp.com", manager_id: manager.id)
 	employees << Employee.create(name: "Matt Busch", email: "mattbusch@devbootcamp.com", manager_id: manager.id)
 
