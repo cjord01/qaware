@@ -12,10 +12,14 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy', as: :logout
 
+  namespace :api do
+    get 'forms' => 'forms#index'
+    get 'sessions/new' => 'sessions#create'  # DEBUGGING - take this out eventually
+    post 'sessions/new' => 'sessions#create'
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
-  get 'api' => 'api#hello'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
