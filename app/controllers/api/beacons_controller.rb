@@ -4,13 +4,13 @@ class Api::BeaconsController < ApplicationController
   def update
     beacon = Beacon.find(params[:beacon_id])
     beacon.update!(employee_id: params[:employee_id])
-    head :updated
+    head :ok
   end
 
   def destroy
     beacon = Beacon.find(params[:beacon_id])
     beacon.update!(employee_id: nil)
-    head :deleted
+    head :ok
   end
 end
 
