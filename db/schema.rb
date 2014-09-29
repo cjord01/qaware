@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(version: 20140928175517) do
 
   create_table "forms", force: true do |t|
     t.string   "title"
-    t.text     "beacon"
     t.integer  "manager_id"
+    t.integer  "beacon_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
