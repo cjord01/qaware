@@ -6,6 +6,18 @@ a {
   color: #8E44AD;
 }
 
+.button {
+  color: #8E44AD;
+  border-color: white;
+  background-color: white;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  -webkit-border-radius: 5px;
+  padding: 3px 6px;
+  text-align: center;
+  white-space: nowrap;
+}
+
 .table td {
   color: white;
 }
