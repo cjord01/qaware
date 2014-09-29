@@ -1,14 +1,16 @@
 class Api::BeaconsController < ApplicationController
+  skip_before_filter  :verify_authenticity_token
+
   def update
     beacon = Beacon.find(params[:beacon_id])
     beacon.update!(employee_id: params[:employee_id])
-    200
+    head :updated
   end
 
   def destroy
     beacon = Beacon.find(params[:beacon_id])
     beacon.update!(employee_id: nil)
-    200
+    head :deleted
   end
 end
 
@@ -16,7 +18,7 @@ end
 =begin
 curl -XPUT -H "Content-Type: application/json" "localhost:3000/api/beacons" -d '
 {
-  "beacon_id": "2",
+  "beacon_id": "1",
   "employee_id": "1"
 }'
 =end
@@ -25,7 +27,7 @@ curl -XPUT -H "Content-Type: application/json" "localhost:3000/api/beacons" -d '
 =begin
 curl -XDELETE -H "Content-Type: application/json" "localhost:3000/api/beacons" -d '
 {
-  "beacon_id": "2",
+  "beacon_id": "1",
   "employee_id": "1"
 }'
 =end

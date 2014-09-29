@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20140928175517) do
     t.string   "uuid"
     t.integer  "major"
     t.integer  "minor"
+    t.integer  "employee_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
