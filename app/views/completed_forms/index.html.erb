@@ -1,77 +1,90 @@
 <div class="container">
-  <h4> <%= link_to "View Employees", employees_path %> | <%= link_to "Add an Employee", new_employee_path %></h4>
 
-<div class="index_page">
-  <h4> <%= link_to "View Employees", employees_path, class: "btn btn-hg btn-primary" %> <%= link_to "Add an Employee", new_employee_path, class: "btn btn-hg btn-primary" %></h4>
-  <h2>Completed Forms</h2>
-  <ul>
-    <% @completed_forms.each do |completed| %>
-      <li>
-        <%= link_to "#{completed.date} - #{completed.time} : #{completed.title}", completed_form_path(completed) %>
-      </li>
-    <% end %>
-  </ul>
-</div>
-
-
-<div class="sidebar" >
-  <div id="graph" class="agraph">
-    <script>var rest_q1_data = <%= @restroom_form.first.first_values %></script>
-    <script>var rest_q2_data = <%= @restroom_form.first.second_values %></script>
-    <script>var rest_q3_data = <%= @restroom_form.first.third_values %></script>
-
-    <script>var rest_q1_xLabels = <%= raw @restroom_form.first.get_complete_dates %></script>
-    <script>var rest_q2_xLabels = <%= raw @restroom_form.first.get_complete_dates %> </script>
-    <script>var rest_q3_xLabels = <%= raw @restroom_form.first.get_complete_dates %></script>
-
-
-    <script>var rest_q1_yLabels = <%= raw @restroom_form.first.first_get_possible%></script>
-    <script>var rest_q2_yLabels = <%= raw @restroom_form.first.second_get_possible%></script>
-    <script>var rest_q3_yLabels = <%= raw @restroom_form.first.third_get_possible%></script>
-
-
-    <script>var rest_q1_title = "<%=@restroom_form.first.questions.first.text%>" </script>
-    <script>var rest_q2_title = "<%=@restroom_form.first.questions.second.text%>" </script>
-    <script>var rest_q3_title = "<%=@restroom_form.first.questions.third.text%>" </script>
-
-    <script>var kitchen_q1_data = <%= @kitchen_form.first.first_values %></script>
-    <script>var kitchen_q2_data = <%= @kitchen_form.first.second_values %></script>
-    <script>var kitchen_q3_data = <%= @kitchen_form.first.third_values %></script>
-
-    <script>var kitchen_q1_yLabels = <%= raw @kitchen_form.first.first_get_possible%></script>
-    <script>var kitchen_q2_yLabels = <%= raw @kitchen_form.first.second_get_possible%></script>
-    <script>var kitchen_q3_yLabels = <%= raw @kitchen_form.first.third_get_possible%></script>
-
-
-    <script>var kitchen_q1_xLabels = <%= raw @kitchen_form.first.get_complete_dates %></script>
-    <script>var kitchen_q2_xLabels = <%= raw @kitchen_form.first.get_complete_dates %></script>
-    <script>var kitchen_q3_xLabels = <%= raw @kitchen_form.first.get_complete_dates %></script>
-
-    
-    <script>var kitchen_q1_title = "<%=@kitchen_form.first.questions.first.text%>" </script>
-    <script>var kitchen_q2_title = "<%=@kitchen_form.first.questions.second.text%>" </script>
-    <script>var kitchen_q3_title = "<%=@kitchen_form.first.questions.third.text%>" </script>
-
-
-    <script>var keg_q1_data = <%= @keg_form.first.first_values %></script>
-    <script>var keg_q2_data = <%= @keg_form.first.second_values %></script>
-    <script>var keg_q3_data = <%= @keg_form.first.third_values %></script>
-
-
-    <script>var keg_q1_yLabels = <%= raw @keg_form.first.first_get_possible%></script>
-    <script>var keg_q2_yLabels = <%= raw @keg_form.first.second_get_possible%></script>
-    <script>var keg_q3_yLabels = <%= raw @keg_form.first.third_get_possible%></script>
-
-
-    <script>var keg_q1_title = "<%=@keg_form.first.questions.first.text%>" </script>
-    <script>var keg_q2_title = "<%=@keg_form.first.questions.second.text%>" </script>
-    <script>var keg_q3_title = "<%=@keg_form.first.questions.third.text%>" </script>
-
-    <script>var keg_q1_xLabels = <%= raw @keg_form.first.get_complete_dates %></script>
-    <script>var keg_q2_xLabels = <%= raw @keg_form.first.get_complete_dates %></script>
-    <script>var keg_q3_xLabels = <%= raw @keg_form.first.get_complete_dates %></script>
-
-
+  <div class="link_buttons">
+    <h4> <%= link_to "View Employees", employees_path, class: "btn btn-hg btn-primary" %> <%= link_to "Add an Employee", new_employee_path, class: "btn btn-hg btn-primary" %></h4>
   </div>
+  <div class="employee_index">
+    <table class="table">
+    <h2>Completed Forms</h2>
+      <tr>
+        <th></th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Location</th>
+        <th>Employee</th>
+      </tr>
+      <% @completed_forms.each do |completed| %>
+      <tr>
+        <td><%= link_to "Select", completed_form_path(completed) %></td>
+        <td><%=  completed.date %></td>
+        <td><%=  completed.time %></td>
+        <td><%=  completed.title %></td>
+        <td><%=  completed.employee.name %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="sidebar" >
+    <div id="graph" class="agraph">
+      <script>var rest_q1_data = <%= @restroom_form.first.first_values %></script>
+      <script>var rest_q2_data = <%= @restroom_form.first.second_values %></script>
+      <script>var rest_q3_data = <%= @restroom_form.first.third_values %></script>
 
+      <script>var rest_q1_xLabels = <%= raw @restroom_form.first.get_complete_dates %></script>
+      <script>var rest_q2_xLabels = <%= raw @restroom_form.first.get_complete_dates %> </script>
+      <script>var rest_q3_xLabels = <%= raw @restroom_form.first.get_complete_dates %></script>
+
+
+      <script>var rest_q1_yLabels = <%= raw @restroom_form.first.first_get_possible%></script>
+      <script>var rest_q2_yLabels = <%= raw @restroom_form.first.second_get_possible%></script>
+      <script>var rest_q3_yLabels = <%= raw @restroom_form.first.third_get_possible%></script>
+
+
+      <script>var rest_q1_title = "<%=@restroom_form.first.questions.first.text%>" </script>
+      <script>var rest_q2_title = "<%=@restroom_form.first.questions.second.text%>" </script>
+      <script>var rest_q3_title = "<%=@restroom_form.first.questions.third.text%>" </script>
+
+      <script>var kitchen_q1_data = <%= @kitchen_form.first.first_values %></script>
+      <script>var kitchen_q2_data = <%= @kitchen_form.first.second_values %></script>
+      <script>var kitchen_q3_data = <%= @kitchen_form.first.third_values %></script>
+
+      <script>var kitchen_q1_yLabels = <%= raw @kitchen_form.first.first_get_possible%></script>
+      <script>var kitchen_q2_yLabels = <%= raw @kitchen_form.first.second_get_possible%></script>
+      <script>var kitchen_q3_yLabels = <%= raw @kitchen_form.first.third_get_possible%></script>
+
+
+      <script>var kitchen_q1_xLabels = <%= raw @kitchen_form.first.get_complete_dates %></script>
+      <script>var kitchen_q2_xLabels = <%= raw @kitchen_form.first.get_complete_dates %></script>
+      <script>var kitchen_q3_xLabels = <%= raw @kitchen_form.first.get_complete_dates %></script>
+
+      
+      <script>var kitchen_q1_title = "<%=@kitchen_form.first.questions.first.text%>" </script>
+      <script>var kitchen_q2_title = "<%=@kitchen_form.first.questions.second.text%>" </script>
+      <script>var kitchen_q3_title = "<%=@kitchen_form.first.questions.third.text%>" </script>
+
+
+      <script>var keg_q1_data = <%= @keg_form.first.first_values %></script>
+      <script>var keg_q2_data = <%= @keg_form.first.second_values %></script>
+      <script>var keg_q3_data = <%= @keg_form.first.third_values %></script>
+
+
+      <script>var keg_q1_yLabels = <%= raw @keg_form.first.first_get_possible%></script>
+      <script>var keg_q2_yLabels = <%= raw @keg_form.first.second_get_possible%></script>
+      <script>var keg_q3_yLabels = <%= raw @keg_form.first.third_get_possible%></script>
+
+
+      <script>var keg_q1_title = "<%=@keg_form.first.questions.first.text%>" </script>
+      <script>var keg_q2_title = "<%=@keg_form.first.questions.second.text%>" </script>
+      <script>var keg_q3_title = "<%=@keg_form.first.questions.third.text%>" </script>
+
+      <script>var keg_q1_xLabels = <%= raw @keg_form.first.get_complete_dates %></script>
+      <script>var keg_q2_xLabels = <%= raw @keg_form.first.get_complete_dates %></script>
+      <script>var keg_q3_xLabels = <%= raw @keg_form.first.get_complete_dates %></script>
+
+
+    </div>
 </div>
+
+
+
+  

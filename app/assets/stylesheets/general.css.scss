@@ -2,22 +2,56 @@
   color: #8E44AD;
 }
 
-a:hover {
+a {
   color: #8E44AD;
 }
 
-// h2 {
-//   color: #8E44AD;
-// }
+.table td {
+  color: white;
+}
 
-// h1 {
-//   font-size: 8rem;
-// }
+.table th {
+  color: white;
+  font-weight: bold;
+}
+
+.link_buttons {
+  width: 35em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.employee_index {
+  width: 35em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+  -webkit-border-radius: 5px;
+  border-color: #8E44AD;
+  border: solid 1px;
+  background-color: #8E44AD;
+  color: white;
+}
+
+a:hover {
+  color: #8E44AD;
+}
 
 .form_show {
   width: 25em;
   margin-left: auto;
   margin-right: auto;
+  color: white;
+  background-color: #8E44AD;
+  padding: 1em;
+  -webkit-border-radius: 15px;
+}
+
+.new_form {
+  width: 25em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
 }
 
 .index_page {
@@ -40,29 +74,11 @@ a:hover {
   margin-right: auto;
 }
 
-
-// .container a:hover {
-//   color: black;
-// }
-
-// table {
-//   margin: 1em auto;
-//   border: black solid 1px;
-//   width: 75%;
-//   padding: 1em;
-//   // max-width: 1200px;
-//   // padding: 0 1em;
-//   // background-color: #8E44AD;
-// }
-
-// nav {
-//   padding: 1rem 0;
-//   background-color: #8E44AD;
-// }
-
 nav a {
   font-size: 2.5rem;
-  padding: 1rem 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem 3rem 0 2rem;
 }
 
 nav span {
