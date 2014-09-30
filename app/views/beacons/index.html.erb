@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="link_buttons">
+    <h4>
+      <%= link_to "View Employees", employees_path, class: "btn btn-hg btn-primary" %>
+      <%= link_to "Add an Employee", new_employee_path, class: "btn btn-hg btn-primary" %>
+      <%= link_to "Inspection Forms", forms_path, class: "btn btn-hg btn-primary" %>
+    </h4>
+  </div>
+  <div class="employee_index">
+    <table class="table">
+    <h2 class= "forms_header">Inspection Locations</h2>
+      <tr>
+        <th>Name</th>
+        <th>Current Employee</th>
+        <th>Last Updated</th>
+      </tr>
+      <% @beacons.each do |beacon| %>
+          <tr class="beacon">
+            <td><%= beacon.location %></td>
+            <td><%= beacon.employee ? beacon.employee.name : "No employee information" %></td>
+            <td><%= beacon.updated_at %></td>
+          </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
