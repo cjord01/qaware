@@ -8,7 +8,7 @@ $(function (){
 			});
 			request.done(function(response){
 				// debugger ; 
-				$("tbody").replaceWith($(response).find("tbody"));
+				$(".beacons tbody").replaceWith($(response).find("tbody"));
 			
 				employeeLocation();
 			});
