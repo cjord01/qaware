@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :completed_forms
   resources :employees
 
+  get 'beacons' => 'beacons#index'
+
   get 'welcome/index'
 
   root 'welcome#index'
