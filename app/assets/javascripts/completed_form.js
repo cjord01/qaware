@@ -92,6 +92,17 @@ function createGraph(data, xLabels, yLabels, title){
 
 }
 
+// function updateCompletedForms(){
+// 	$.getScript("/completed_forms.js")
+// 	// $.ajax({
+// 	// 	url: '/completed_forms',
+// 	// 	dataType: "html",
+// 	// 	success: success
+// 	// });
+
+// 	// $("completed_forms").append()
+// 	setTimeout(updateCompletedForms, 3000)							// setInterval can do the same thing as setTimeout but setTimeout will only trigger once just in case request takes more time 
+// }
 
 
 $(function(){
@@ -108,6 +119,56 @@ $(function(){
 	createGraph(keg_q1_data, keg_q1_xLabels, keg_q1_yLabels, keg_q1_title);
 	createGraph(keg_q2_data, keg_q2_xLabels, keg_q2_yLabels, keg_q2_title);
 	createGraph(keg_q3_data, keg_q3_xLabels, keg_q3_yLabels, keg_q3_title);
+
+	
+
+	(function refresh() {
+			setTimeout(function(){
+
+			var url = "/completed_forms/refresh/" + lastId;
+			var request = $.ajax(url, {
+				method: "GET"
+			});
+					// debugger;
+			request.done(function(response){
+				// $forms = $(response).find("table");
+				// $("table").html($forms);
+				// console.log(response[0])
+				renderNewCompletedForm(response);
+				refresh();
+			});
+		}, 3000);
+	})();
+
+
+	function timeFormat(date){
+		if (date.getHours() > 12){
+			return date.getHours()-12 + ":" + date.getMinutes();
+		}
+		else {
+			return date.getHours() + ":" + date.getMinutes();
+		}
+	}
+
+
+	function renderNewCompletedForm(responses){
+		for (i=0; i < responses.length; i++){
+			var date = new Date(responses[i].created_at);
+			var month = date.getMonth() + 1 + "/";
+			var day = date.getDate() + "/";
+			var year = date.getFullYear();
+			var dateFormat = month + day + year;
+			var time = timeFormat(date);
+
+			$(".table").append("<tr><td><a href='/completed_forms/" + lastId + "'>Select</a>" + "</td><td>" + 
+						dateFormat + "</td><td>" +
+						time + "</td><td>" + 
+						responses[i].form.title + "</td><td>"+  
+						responses[i].employee.name + "</td><tr>");
+				lastId ++;
+				// console.log(lastId);
+		}
+	}
 
 
 });

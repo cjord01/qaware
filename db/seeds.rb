@@ -89,6 +89,7 @@
 		possible_response35 = PossibleResponse.create(question_id: question9.id, text: "Under Pressure", number_value: 2)
 		possible_response36 = PossibleResponse.create(question_id: question9.id, text: "Queen feat. David Bowie", number_value: 3)
 
+
 # Completed forms for restroom
 day1 = 11
 10.times do
@@ -100,6 +101,7 @@ day1 = 11
 end
 
 
+
 # Completed forms for Kitchen
 day2 = 11
 10.times do
@@ -109,6 +111,7 @@ day2 = 11
   Response.create(completed_form_id: completed.id, possible_response_id: [17,18,19,20].sample)
   Response.create(completed_form_id: completed.id, possible_response_id: [21,22,23,24].sample)
 end
+
 
 # Completed forms for Keg
 day3 = 11
