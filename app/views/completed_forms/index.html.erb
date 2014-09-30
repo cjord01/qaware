@@ -8,6 +8,7 @@
       <%= link_to "Inspection Forms", forms_path, class: "btn btn-hg btn-primary" %>
       <%= link_to "Location Status", beacons_path, class: "btn btn-hg btn-primary" %>
 
+
     </h4>
   </div>
   <div class="employee_index">
@@ -20,13 +21,15 @@
         <th>Location</th>
         <th>Employee</th>
       </tr>
+      <div class="completed_form_box">
       <% @completed_forms.each do |completed| %>
-
+        <div class="completed_box">
           <tr class="completed_forms">
-            <%= render :partial => 'completed_forms/completed_form', locals: {completed: completed} %>
+            <%= render :partial => 'completed_forms/completed_form', locals: {completed: completed} %> 
           </tr>
-
+        </div>
       <% end %>
+      </div>
     </table>
   </div>
 
