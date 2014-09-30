@@ -1,3 +1,4 @@
+<div class='page_show'>
  <div class="new_form">
   <h2><%= @empty_form.title %></h2>
 
@@ -13,18 +14,19 @@
         </select>
       </label><br>
 
-    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-    <input type="hidden" name="response[form_id]"value="<%= @empty_form.id %>">
-    <ol>
-      <% @empty_form.questions.each do |question| %>
-        <li><%= question.text %></li>
-          <% question.possible_responses.each do |possible_response| %>
-          <li><input type="radio" name="responses[<%=question.id%>]" value="<%= possible_response.id %>"> <%=possible_response.text%></li>
-          <% end %>
-          <br>
-      <% end %>
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+      <input type="hidden" name="response[form_id]"value="<%= @empty_form.id %>">
+      <ol>
+        <% @empty_form.questions.each do |question| %>
+          <li><%= question.text %></li>
+            <% question.possible_responses.each do |possible_response| %>
+            <li><input type="radio" name="responses[<%=question.id%>]" value="<%= possible_response.id %>"> <%=possible_response.text%></li>
+            <% end %>
+            <br>
+        <% end %>
 
-      <input class="button" type="submit" value="Submit">
-    </ol>
-  </form>
+        <input class="button" type="submit" value="Submit">
+      </ol>
+    </form>
+  </div>
 </div>

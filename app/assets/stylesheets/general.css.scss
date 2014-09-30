@@ -11,6 +11,33 @@ body a:hover {
   text-decoration: underline;
 }
 
+.page {
+  background-color: #8E44AD;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+.page_show {
+  background-color: #8E44AD;
+  width: 100%;
+  height: 100%;
+  color: white;
+  margin: 0;
+}
+
+.welcomepage {
+  background-color: #8E44AD;
+  width: 23em;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  padding: 1em 1em 17em 1em;
+  text-align: center;
+}
+
 .button {
   color: white;
   border-color: white;
@@ -47,16 +74,35 @@ body a:hover {
   font-weight: bold;
 }
 
-.btn.btn-hg.btn-primary {
-  background-color: white;
+.completed_form_index {
+  width: 46em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+  -webkit-border-radius: 5px;
   border-color: white;
-  color: #8E44AD;
+  border: solid 1px;
+  background-color: #8E44AD;
+  color: white;
+  height: 30em;
+  overflow: auto;
+}
+
+.completed_form_index h2 {
+  margin-top: 0px;
+}
+
+.btn.btn-hg.btn-primary {
+  background-color: #8E44AD;
+  border-color: white;
+  color: white;
   border: solid 2px;
   font-weight: bold;
+  width: 11em;
 }
 
 .link_buttons {
-  width: 45em;
+  width: 46em;
   margin-left: auto;
   margin-right: auto;
 }
@@ -75,7 +121,7 @@ body a:hover {
 }
 
 .employee_index {
-  width: 45em;
+  width: 46em;
   margin-left: auto;
   margin-right: auto;
   padding: 1em;
@@ -88,18 +134,8 @@ body a:hover {
   overflow: auto;
 }
 
-.completed_form_index {
-  width: 45em;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1em;
-  -webkit-border-radius: 5px;
-  border-color: #8E44AD;
-  border: solid 1px;
-  background-color: #8E44AD;
-  color: white;
-  height: 30em;
-  overflow: auto;
+.employee_index h2 {
+  margin-top: 0px;
 }
 
 .btn {
@@ -117,7 +153,7 @@ margin-top: 0px;
 }
 
 .form_show {
-  width: 30em;
+  width: 46em;
   margin-left: auto;
   margin-right: auto;
   color: white;
@@ -126,19 +162,14 @@ margin-top: 0px;
   -webkit-border-radius: 5px;
 }
 
+.form_show h2 {
+  margin-top: 0px;
+}
+
 .navbar {
   margin-bottom: 0;
 }
 
-.welcomepage {
-  background-color: #8E44AD;
-  width: 23em;
-  margin-left: auto;
-  margin-right: auto;
-  color: white;
-  padding: 1em 1em 17em 1em;
-  text-align: center;
-}
 
 .new_form {
   width: 23em;
