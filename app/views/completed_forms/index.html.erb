@@ -24,6 +24,7 @@
   <div class="sidebar" >
     <div id="graph" class="agraph">
       <script>
+      var lastId = <%= @last_id %>
       var rest_q1_data = <%= @restroom_form.first.first_values %>
       var rest_q2_data = <%= @restroom_form.first.second_values %>
       var rest_q3_data = <%= @restroom_form.first.third_values %>

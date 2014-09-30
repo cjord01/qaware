@@ -5,12 +5,7 @@ class CompletedFormsController < ApplicationController
     @restroom_form = Form.where(title: "Restroom")
     @kitchen_form = Form.where(title: "Kitchen")
     @keg_form = Form.where(title: "Keg")
-  
-    data = {
-      completed: @completed_forms
-    }
-
-    # render :json => data.to_json
+    @last_id = CompletedForm.last.id
 
     if session[:manager_id]
       @completed_forms = CompletedForm.order('created_at DESC').all
@@ -22,11 +17,11 @@ class CompletedFormsController < ApplicationController
 
   def create
     # raise params.inspect
-  	@completed = CompletedForm.create!(form_id: params[:response][:form_id], employee_id: params[:response][:employee_id])
-  	params[:responses].each do |question_id, response|
-  		Response.create!( possible_response_id: response, completed_form_id: @completed.id)
-  	end
-  	redirect_to forms_path
+    @completed = CompletedForm.create!(form_id: params[:response][:form_id], employee_id: params[:response][:employee_id])
+    params[:responses].each do |question_id, response|
+      Response.create!( possible_response_id: response, completed_form_id: @completed.id)
+    end
+    redirect_to forms_path
   end
 
   def show
@@ -37,6 +32,14 @@ class CompletedFormsController < ApplicationController
     else
       redirect_to root_path
     end
+  end
+
+  def refresh
+    last_id = params[:id]
+    @completed_forms = CompletedForm.where("id > ?", last_id)
+
+    render :json => @completed_forms.to_json(:include => {:employee => {:only => :name},
+                                                         :form => { :only => :title }})
   end
 
 end

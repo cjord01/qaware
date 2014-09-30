@@ -124,22 +124,51 @@ $(function(){
 
 	(function refresh() {
 			setTimeout(function(){
-			var url = "/completed_forms";
+
+			var url = "/completed_forms/refresh/" + lastId;
 			var request = $.ajax(url, {
 				method: "GET"
 			});
-
+					// debugger;
 			request.done(function(response){
-				console.log(response)
-				// renderNewCompletedForm(response);
+				// $forms = $(response).find("table");
+				// $("table").html($forms);
+				// console.log(response[0])
+				renderNewCompletedForm(response);
 				refresh();
 			});
 		}, 3000);
 	})();
 
-	// var renderNewCompletedForm = function(messages){
-	// 	var feed 
-	// }
+
+	function timeFormat(date){
+		if (date.getHours() > 12){
+			return date.getHours()-12 + ":" + date.getMinutes();
+		}
+		else {
+			return date.getHours() + ":" + date.getMinutes();
+		}
+	}
+
+
+	function renderNewCompletedForm(responses){
+		for (i=0; i < responses.length; i++){
+			var date = new Date(responses[i].created_at);
+			var month = date.getMonth() + 1 + "/";
+			var day = date.getDate() + "/";
+			var year = date.getFullYear();
+			var dateFormat = month + day + year;
+			var time = timeFormat(date);
+
+			$(".table").append("<tr><td><a href='/completed_forms/" + lastId + "'>Select</a>" + "</td><td>" + 
+						dateFormat + "</td><td>" +
+						time + "</td><td>" + 
+						responses[i].form.title + "</td><td>"+  
+						responses[i].employee.name + "</td><tr>");
+				lastId ++;
+				// console.log(lastId);
+		}
+	}
 
 
 });

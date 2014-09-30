@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   get 'api' => 'api#hello'
 
+  get '/completed_forms/refresh/:id' => 'completed_forms#refresh'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
