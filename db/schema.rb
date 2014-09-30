@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140928175517) do
+ActiveRecord::Schema.define(version: 20140930013553) do
 
   create_table "beacons", force: true do |t|
     t.string   "location"
@@ -23,12 +23,16 @@ ActiveRecord::Schema.define(version: 20140928175517) do
     t.datetime "updated_at"
   end
 
+  add_index "beacons", ["employee_id"], name: "index_beacons_on_employee_id"
+
   create_table "completed_forms", force: true do |t|
     t.integer  "form_id"
     t.integer  "employee_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "completed_forms", ["employee_id"], name: "index_completed_forms_on_employee_id"
 
   create_table "employees", force: true do |t|
     t.string   "name"
@@ -37,6 +41,8 @@ ActiveRecord::Schema.define(version: 20140928175517) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "employees", ["manager_id"], name: "index_employees_on_manager_id"
 
   create_table "forms", force: true do |t|
     t.string   "title"
@@ -62,6 +68,8 @@ ActiveRecord::Schema.define(version: 20140928175517) do
     t.datetime "updated_at"
   end
 
+  add_index "possible_responses", ["question_id"], name: "index_possible_responses_on_question_id"
+
   create_table "questions", force: true do |t|
     t.text     "text"
     t.integer  "form_id"
@@ -69,11 +77,16 @@ ActiveRecord::Schema.define(version: 20140928175517) do
     t.datetime "updated_at"
   end
 
+  add_index "questions", ["form_id"], name: "index_questions_on_form_id"
+
   create_table "responses", force: true do |t|
     t.integer  "possible_response_id"
     t.integer  "completed_form_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "responses", ["completed_form_id"], name: "index_responses_on_completed_form_id"
+  add_index "responses", ["possible_response_id"], name: "index_responses_on_possible_response_id"
 
 end
