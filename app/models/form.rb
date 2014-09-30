@@ -5,15 +5,15 @@ class Form < ActiveRecord::Base
   has_many :completed_forms
 
 	def first_values
-		self.questions.first.responses.map(&:possible_response).map(&:number_value)
+		self.questions.first.responses.order(created_at: :asc).map(&:possible_response).map(&:number_value)
 	end
 
 	def second_values
-		self.questions.second.responses.map(&:possible_response).map(&:number_value)
+		self.questions.second.responses.order(created_at: :asc).map(&:possible_response).map(&:number_value)
 	end 
 
 	def third_values
-		self.questions.third.responses.map(&:possible_response).map(&:number_value)
+		self.questions.third.responses.order(created_at: :asc).map(&:possible_response).map(&:number_value)
 	end
 
 	def first_get_possible
