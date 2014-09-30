@@ -8,7 +8,7 @@ class Api::BeaconsController < ApplicationController
   end
 
   def destroy
-    beacon = Beacon.find_by(params[:minor_id])
+    beacon = Beacon.find_by(minor: params[:minor_id])
     beacon.update!(employee_id: nil)
     head :ok
   end
