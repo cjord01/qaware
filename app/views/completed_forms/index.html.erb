@@ -6,6 +6,9 @@
       <%= link_to "View Employees", employees_path, class: "btn btn-hg btn-primary" %>
       <%= link_to "Add an Employee", new_employee_path, class: "btn btn-hg btn-primary" %>
       <%= link_to "Inspection Forms", forms_path, class: "btn btn-hg btn-primary" %>
+      <%= link_to "Location Status", beacons_path, class: "btn btn-hg btn-primary" %>
+
+
     </h4>
   </div>
 
@@ -21,14 +24,17 @@
         <th>Location</th>
         <th>Employee</th>
       </tr>
+
       </thead>
-      <tbody>
+      <div class="completed_form_box">
       <% @completed_forms.each do |completed| %>
-      <tr class="completed_forms">
-          <%= render :partial => 'completed_forms/completed_form', locals: {completed: completed} %>
-      </tr>
+        <div class="completed_box">
+          <tr class="completed_forms">
+            <%= render :partial => 'completed_forms/completed_form', locals: {completed: completed} %>
+          </tr>
+        </div>
       <% end %>
-      </tbody>
+      </div>
     </table>
   </div>
 

@@ -7,7 +7,7 @@
     </h4>
   </div>
   <div class="employee_index">
-    <table class="table">
+    <table class="table beacons" >
     <h2 class= "forms_header">Inspection Locations</h2>
       <tr>
         <th>Name</th>
@@ -18,7 +18,7 @@
           <tr class="beacon">
             <td><%= beacon.location %></td>
             <td><%= beacon.employee ? beacon.employee.name : "No employee information" %></td>
-            <td><%= beacon.updated_at %></td>
+            <td><%= beacon.beacon_time_stamp %></td>
           </tr>
       <% end %>
     </table>
