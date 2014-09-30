@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
+  get 'forms/confirmation'
   resources :forms
   resources :completed_forms
   resources :employees
 
   get 'beacons' => 'beacons#index'
 
-  get 'welcome/index'
+
+  # get 'welcome/index'
 
   root 'welcome#index'
 
@@ -28,5 +30,5 @@ Rails.application.routes.draw do
 
   get '/completed_forms/refresh/:id' => 'completed_forms#refresh'
 
-  
+
 end

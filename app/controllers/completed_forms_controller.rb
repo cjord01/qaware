@@ -12,7 +12,6 @@ class CompletedFormsController < ApplicationController
     else
       redirect_to root_path
     end
-
   end
 
   def create
@@ -21,7 +20,7 @@ class CompletedFormsController < ApplicationController
     params[:responses].each do |question_id, response|
       Response.create!( possible_response_id: response, completed_form_id: @completed.id)
     end
-    redirect_to forms_path
+    redirect_to forms_confirmation_path
   end
 
   def show
