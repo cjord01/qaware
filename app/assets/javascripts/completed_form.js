@@ -79,10 +79,48 @@ function createGraph(data, xLabels, yLabels, title){
 
 	graph.append("svg:path").attr("d", line(data));
 
+	// tooltip code
 
+	// var bisectDate = d3.bisector(function(d) {return d.xLabels;}).left;
+	// var lineSvg = graph.append("g");
+	// var focus = graph.append("g")
+	// 				.style("display", "none");
+	// lineSvg.append("path")
+	// 	.attr("class", "line")
+	// 	.attr("d", line(data))
 
+	// // adding circle to graph
+	// focus.append("circle")
+	// 	.attr("class", "y")
+	// 	.style("fill", "none")
+	// 	.style("stroke", "blue")
+	// 	.attr("r", 4);
+
+	// // set area to capture mouse movements
+
+	// graph.append("rect")
+	// 	.attr("width", width)
+	// 	.attr("height", height)
+	// 	.style("fill", "none")
+	// 	.style("pointer-events", "all")
+	// 	.on("mouseover", function() {focus.style("display", null); })
+	// 	.on("mouseout", function() {focus.style("display", "none"); })
+	// 	.on("mousemove", mousemove);
+
+	// // determining which date will be highlighted
+	// function mousemove() {
+	// var x0 = x.invert(d3.mouse(this)[0]),			// returns the x position of the mouse
+	// 	i = bisectDate(data, x0, 1),				// find the index of our data array
+	// 	d0 = data[i-1],								// subsets of our data array
+	// 	d1 = data[i],
+	// 	d = x0 - d0.xLabels > d1.xLabels - x0 ? d1 : d0;
+
+	// focus.select("circle.y")
+	// 	.attr("transform",
+	// 			"translate(" + x(xLabels) + "," + y(yLabels) + ")");
+	// }
 }
-
+		
 
 
 	function timeFormat(date){
@@ -100,7 +138,7 @@ function createGraph(data, xLabels, yLabels, title){
 			var date = new Date(responses[i].created_at);
 			var month = date.getMonth() + 1 + "/";
 			var day = date.getDate() + "/";
-			var year = date.getFullYear();
+			var year = date.getFullYear().toString().substr(2,2);
 			var dateFormat = month + day + year;
 			var time = timeFormat(date);
 
@@ -129,42 +167,18 @@ $(function(){
 		createGraph(keg_q3_data, keg_q3_xLabels, keg_q3_yLabels, keg_q3_title);
 
 
-	(function refresh() {
-			setTimeout(function(){
+		(function refresh() {
+				setTimeout(function(){
 
-			var url = "/completed_forms/refresh/" + lastId;
-			var request = $.ajax(url, {
-				method: "GET"
-			});
-			request.done(function(response){
-				renderNewCompletedForm(response);
-				refresh();
-			});
-		}, 3000);
-	})();
-}
-
-
-	// $("#sort_button").click(function(event){
-	//     event.preventDefault();
-	//       debugger;
-	//     var sort_id = $(this).attr("id")
-	//     var allCompleted = $(".completed_box")
-
-	//     allProjects.sort(function(a,b) {
-	//       an = $(a).find("." + sort_id).text(),
-	//       bn = $(b).find("." + sort_id).text();
-
-	//       if(an < bn) { return 1; }
-	//       if(an > bn) { return -1; }
-	//       return 0;
-	//     });
-
- //    allCompleted.detach().appendTo(".completed_form_box")
-
-
-
-
+				var url = "/completed_forms/refresh/" + lastId;
+				var request = $.ajax(url, {
+					method: "GET"
+				});
+				request.done(function(response){
+					renderNewCompletedForm(response);
+					refresh();
+				});
+			}, 3000);
+		})();
+	}
 });
-
-
