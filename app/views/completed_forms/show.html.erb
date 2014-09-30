@@ -1,3 +1,13 @@
+<div class="container">
+  <div class="link_buttons">
+    <h4>
+      <%= link_to "Completed Forms", completed_forms_path, class: "btn btn-hg btn-primary" %>
+      <%= link_to "Location Status", beacons_path, class: "btn btn-hg btn-primary" %>
+      <%= link_to "View Employees", employees_path, class: "btn btn-hg btn-primary" %>
+      <%= link_to "Add an Employee", new_employee_path, class: "btn btn-hg btn-primary" %>
+    </h4>
+  </div>
+
 <div class="form_show">
   <h2>Completed Form #<%=@completed_form.id%></h2>
   LOCATION: <%= @completed_form.title %><br>
@@ -9,5 +19,5 @@
       <%= q_or_a %>
     <% end %>
   <% end %>
-
+</div>
 </div>
