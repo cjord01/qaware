@@ -16,7 +16,7 @@ body a:hover {
   border-color: white;
   background-color: #8E44AD;
   -webkit-border-radius: 5px;
-  padding: 4px 6px;
+  padding: 3px 5px;
   text-align: center;
   border: solid 2px;
 }
@@ -84,6 +84,22 @@ body a:hover {
   border: solid 1px;
   background-color: #8E44AD;
   color: white;
+  height: 17em;
+  overflow: auto;
+}
+
+.completed_form_index {
+  width: 45em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+  -webkit-border-radius: 5px;
+  border-color: #8E44AD;
+  border: solid 1px;
+  background-color: #8E44AD;
+  color: white;
+  height: 30em;
+  overflow: auto;
 }
 
 .btn {
@@ -91,7 +107,7 @@ body a:hover {
   padding-left: 3px;
 }
 
-.forms_header {
+.header {
   text-align: center;
   margin: 5px;
 }

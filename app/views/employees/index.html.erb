@@ -1,15 +1,17 @@
-<div class="employee_index">
-  <h2>Employees</h2>
-  <table class="table">
-    <tr>
-      <th>Employee</th>
-      <th>Email</th>
-    </tr>
-    <% @employees.each do |employee| %>
-    <tr>
-      <td><%= employee.name %></td>
-      <td><%= mail_to "#{employee.email}" %></td>
-    </tr>
-    <% end %>
-  </table>
+<div class="container">
+  <h2 class='header'>Employees</h2>
+  <div class="employee_index">
+    <table class="table">
+      <tr>
+        <th>Employee</th>
+        <th>Email</th>
+      </tr>
+      <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.name %></td>
+        <td><%= mail_to "#{employee.email}" %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
