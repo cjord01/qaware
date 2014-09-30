@@ -5,26 +5,26 @@ function createGraph(data, xLabels, yLabels, title){
 	var yLabels = yLabels;
 	var title = title;
 
-	var m = [80, 80, 80, 320]; 		
-	var width = 750 - m[1] - m[3]; 	
-	var height = 450 - m[0] - m[2]; 
-		
-	var x = d3.scale.linear()			
-		.domain([0, data.length-1])		
-		.range([0, width]); 				
-	var y = d3.scale.linear()
-		.domain([0, d3.max(data)])  	
-		.range([height, 0]); 				
+	var m = [80, 80, 80, 320];
+	var width = 750 - m[1] - m[3];
+	var height = 450 - m[0] - m[2];
 
-	var line = d3.svg.line() 			
-	.x(function createX(d,i) { 
+	var x = d3.scale.linear()
+		.domain([0, data.length-1])
+		.range([0, width]);
+	var y = d3.scale.linear()
+		.domain([0, d3.max(data)])
+		.range([height, 0]);
+
+	var line = d3.svg.line()
+	.x(function createX(d,i) {
 		// console.log('Plotting X value for data point: ' + d + ' using index: ' + i + ' to be at: ' + x(i) + ' using our xScale.');
-		return x(i); 
+		return x(i);
 	})
-	.y(function createY(d) { 
+	.y(function createY(d) {
 		// console.log('Plotting Y value for data point: ' + d + ' to be at: ' + y(d) + " using our yScale.");
-	
-		return y(d); 
+
+		return y(d);
 	})
 
 	var graph = d3.select("#graph").append("svg:svg")
@@ -32,7 +32,7 @@ function createGraph(data, xLabels, yLabels, title){
 	    .attr("height", height + m[0] + m[2])
 	    .append("svg:g")
 	    .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
-	    
+
 	var xAxis = d3.svg.axis().scale(x)
 					.tickFormat(function(index){
 						return xLabels[index]
@@ -47,7 +47,7 @@ function createGraph(data, xLabels, yLabels, title){
 	    .call(xAxis)
 	    .selectAll("text")
 	    	.attr("dy", "0.3em")
-	    	.attr("dx", "-2em") 			
+	    	.attr("dx", "-2em")
 			.attr("transform", function(d) {
 				return "rotate(-65)"
 			});
@@ -75,8 +75,8 @@ function createGraph(data, xLabels, yLabels, title){
     	.style("font-size", "1.8rem")
     	.style("font-weight", "bold")
     	.text(title)
-	
-	
+
+
 	graph.append("svg:path").attr("d", line(data));
 
 }
@@ -102,10 +102,10 @@ function createGraph(data, xLabels, yLabels, title){
 			var dateFormat = month + day + year;
 			var time = timeFormat(date);
 
-			$(".table").append("<tr><td><a href='/completed_forms/" + lastId + "'>Select</a>" + "</td><td>" + 
+			$(".table").append("<tr><td><a href='/completed_forms/" + lastId + "'>Select</a>" + "</td><td>" +
 						dateFormat + "</td><td>" +
-						time + "</td><td>" + 
-						responses[i].form.title + "</td><td>"+  
+						time + "</td><td>" +
+						responses[i].form.title + "</td><td>"+
 						responses[i].employee.name + "</td><tr>");
 				lastId ++;
 		}
@@ -126,21 +126,21 @@ $(function(){
 		createGraph(keg_q2_data, keg_q2_xLabels, keg_q2_yLabels, keg_q2_title);
 		createGraph(keg_q3_data, keg_q3_xLabels, keg_q3_yLabels, keg_q3_title);
 
+		(function refresh() {
+				setTimeout(function(){
+
+				var url = "/completed_forms/refresh/" + lastId;
+				var request = $.ajax(url, {
+					method: "GET"
+				});
+				request.done(function(response){
+					renderNewCompletedForm(response);
+					refresh();
+				});
+			}, 3000);
+		})();
 	}
 
-	(function refresh() {
-			setTimeout(function(){
-
-			var url = "/completed_forms/refresh/" + lastId;
-			var request = $.ajax(url, {
-				method: "GET"
-			});
-			request.done(function(response){
-				renderNewCompletedForm(response);
-				refresh();
-			});
-		}, 3000);
-	})();
 
 	// $("#sort_button").click(function(event){
 	//     event.preventDefault();
