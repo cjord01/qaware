@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20140928175517) do
     t.string   "uuid"
     t.integer  "major"
     t.integer  "minor"
-    t.integer  "form_id"
+    t.integer  "employee_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140928175517) do
   create_table "forms", force: true do |t|
     t.string   "title"
     t.integer  "manager_id"
+    t.integer  "beacon_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

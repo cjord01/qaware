@@ -2,8 +2,63 @@
   color: #8E44AD;
 }
 
-a {
+body a {
+  color: white;
+}
+
+body a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.button {
+  color: white;
+  border-color: white;
+  background-color: #8E44AD;
+  -webkit-border-radius: 5px;
+  padding: 4px 6px;
+  text-align: center;
+  border: solid 2px;
+}
+
+.welcomepage .button {
+  background-color: white;
+  border-color: white;
   color: #8E44AD;
+  font-weight: bold;
+}
+
+.new_form .button {
+  background-color: white;
+  border-color: white;
+  color: #8E44AD;
+  border: solid 2px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.login .button {
+  background-color: white;
+  border-color: white;
+  color: #8E44AD;
+  border: solid 2px;
+  font-weight: bold;
+}
+
+.btn.btn-hg.btn-primary {
+  background-color: white;
+  border-color: white;
+  color: #8E44AD;
+  border: solid 2px;
+  font-weight: bold;
+}
+
+.link_buttons {
+  width: 45em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .table td {
@@ -15,14 +70,12 @@ a {
   font-weight: bold;
 }
 
-.link_buttons {
-  width: 35em;
-  margin-left: auto;
-  margin-right: auto;
+.btn a:hover {
+  text-decoration: underline;
 }
 
 .employee_index {
-  width: 35em;
+  width: 45em;
   margin-left: auto;
   margin-right: auto;
   padding: 1em;
@@ -33,25 +86,77 @@ a {
   color: white;
 }
 
-a:hover {
-  color: #8E44AD;
+.btn {
+  padding-right: 3px;
+  padding-left: 3px;
+}
+
+.forms_header {
+  text-align: center;
+  margin: 5px;
+}
+
+h3 {
+margin-top: 0px;
 }
 
 .form_show {
-  width: 25em;
+  width: 30em;
   margin-left: auto;
   margin-right: auto;
   color: white;
   background-color: #8E44AD;
   padding: 1em;
-  -webkit-border-radius: 15px;
+  -webkit-border-radius: 5px;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.welcomepage {
+  background-color: #8E44AD;
+  width: 23em;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  padding: 1em 1em 17em 1em;
+  text-align: center;
 }
 
 .new_form {
-  width: 25em;
+  width: 23em;
   margin-left: auto;
   margin-right: auto;
-  padding: 1em;
+  padding: 1em 1em 2em 1em;
+  background-color: #8E44AD;
+}
+
+.new_form * {
+  color: white;
+}
+
+.new_form h2 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+
+.login {
+  background-color: #8E44AD;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  text-align: center;
+  // height: 100%;
+}
+
+
+.login .form-control {
+  margin-left: auto;
+  margin-right: auto;
+  width: 12em;
 }
 
 .index_page {
@@ -61,12 +166,6 @@ a:hover {
   margin-right: auto;
 }
 
-.welcomepage {
-  color: #8E44AD;
-  width: 10em;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .new_employee {
   width: 20em;
@@ -78,18 +177,16 @@ nav a {
   font-size: 2.5rem;
   margin-left: auto;
   margin-right: auto;
-  padding: 1rem 3rem 0 2rem;
+  float: left;
+  padding: 1rem 2rem;
+  color: #8E44AD;
 }
 
 nav span {
   float: right;
-  padding: 0 2rem;
+  padding: 1rem 2rem;
 }
 
-// nav a:hover {
-//   color: black;
-// }
-
-// th {
-//   font-weight: bold;
-// }
+nav a:hover {
+  color: #8E44AD;
+}

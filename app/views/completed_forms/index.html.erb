@@ -1,11 +1,16 @@
+
 <div class="container">
 
   <div class="link_buttons">
-    <h4> <%= link_to "View Employees", employees_path, class: "btn btn-hg btn-primary" %> <%= link_to "Add an Employee", new_employee_path, class: "btn btn-hg btn-primary" %></h4>
+    <h4>
+      <%= link_to "View Employees", employees_path, class: "btn btn-hg btn-primary" %>
+      <%= link_to "Add an Employee", new_employee_path, class: "btn btn-hg btn-primary" %>
+      <%= link_to "Inspection Forms", forms_path, class: "btn btn-hg btn-primary" %>
+    </h4>
   </div>
   <div class="employee_index">
     <table class="table">
-    <h2>Completed Forms</h2>
+    <h2 class= "forms_header">Completed Forms</h2>
       <tr>
         <th></th>
         <th>Date</th>
@@ -14,6 +19,7 @@
         <th>Employee</th>
       </tr>
       <% @completed_forms.each do |completed| %>
+
           <tr class="completed_forms">
             <%= render :partial => 'completed_forms/completed_form', locals: {completed: completed} %>
           </tr>
@@ -21,6 +27,7 @@
       <% end %>
     </table>
   </div>
+
   <div class="sidebar" >
     <div id="graph" class="agraph">
       <script>
@@ -55,7 +62,6 @@
       var kitchen_q1_xLabels = <%= raw @kitchen_form.first.get_complete_dates %>
       var kitchen_q2_xLabels = <%= raw @kitchen_form.first.get_complete_dates %>
       var kitchen_q3_xLabels = <%= raw @kitchen_form.first.get_complete_dates %>
-
       
       var kitchen_q1_title = "<%=@kitchen_form.first.questions.first.text%>" 
       var kitchen_q2_title = "<%=@kitchen_form.first.questions.second.text%>" 
@@ -87,4 +93,4 @@
 
 
 
-  
+

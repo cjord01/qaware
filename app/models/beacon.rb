@@ -1,3 +1,4 @@
 class Beacon < ActiveRecord::Base
-  belongs_to :form
+  has_many :forms
+  belongs_to :employee
 end

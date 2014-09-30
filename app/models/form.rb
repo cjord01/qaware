@@ -1,8 +1,8 @@
 class Form < ActiveRecord::Base
   belongs_to :manager
+  belongs_to :beacon
   has_many :questions
   has_many :completed_forms
-  has_one :beacon
 
 	def first_values
 		self.questions.first.responses.map(&:possible_response).map(&:number_value)
