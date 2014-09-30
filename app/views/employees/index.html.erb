@@ -1,6 +1,15 @@
 <div class="container">
-  <h2 class='header'>Employees</h2>
+<div class="link_buttons">
+  <h4>
+    <%= link_to "Location Status", beacons_path, class: "btn btn-hg btn-primary" %>
+    <%= link_to "View Employees", employees_path, class: "btn btn-hg btn-primary" %>
+    <%= link_to "Inspection Forms", forms_path, class: "btn btn-hg btn-primary" %>
+    <%= link_to "Add an Employee", new_employee_path, class: "btn btn-hg btn-primary" %>
+  </h4>
+</div>
+
   <div class="employee_index">
+  <h2>Employees</h2>
     <table class="table">
       <tr>
         <th>Employee</th>
