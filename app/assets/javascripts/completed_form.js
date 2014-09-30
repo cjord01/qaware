@@ -82,37 +82,6 @@ function createGraph(data, xLabels, yLabels, title){
 }
 
 
-$(function(){
-
-
-	createGraph(rest_q1_data, rest_q1_xLabels, rest_q1_yLabels, rest_q1_title);
-	createGraph(rest_q2_data, rest_q2_xLabels, rest_q2_yLabels, rest_q2_title);
-	createGraph(rest_q3_data, rest_q3_xLabels, rest_q3_yLabels, rest_q3_title);
-
-	createGraph(kitchen_q1_data, kitchen_q1_xLabels, kitchen_q1_yLabels, kitchen_q1_title);
-	createGraph(kitchen_q2_data, kitchen_q2_xLabels, kitchen_q2_yLabels, kitchen_q2_title);
-	createGraph(kitchen_q3_data, kitchen_q3_xLabels, kitchen_q3_yLabels, kitchen_q3_title);
-
-	createGraph(keg_q1_data, keg_q1_xLabels, keg_q1_yLabels, keg_q1_title);
-	createGraph(keg_q2_data, keg_q2_xLabels, keg_q2_yLabels, keg_q2_title);
-	createGraph(keg_q3_data, keg_q3_xLabels, keg_q3_yLabels, keg_q3_title);
-
-	
-
-	(function refresh() {
-			setTimeout(function(){
-
-			var url = "/completed_forms/refresh/" + lastId;
-			var request = $.ajax(url, {
-				method: "GET"
-			});
-			request.done(function(response){
-				renderNewCompletedForm(response);
-				refresh();
-			});
-		}, 3000);
-	})();
-
 
 	function timeFormat(date){
 		if (date.getHours() > 12){
@@ -141,6 +110,56 @@ $(function(){
 				lastId ++;
 		}
 	}
+
+$(function(){
+
+	if ( $(".agraph").length > 0){
+		createGraph(rest_q1_data, rest_q1_xLabels, rest_q1_yLabels, rest_q1_title);
+		createGraph(rest_q2_data, rest_q2_xLabels, rest_q2_yLabels, rest_q2_title);
+		createGraph(rest_q3_data, rest_q3_xLabels, rest_q3_yLabels, rest_q3_title);
+
+		createGraph(kitchen_q1_data, kitchen_q1_xLabels, kitchen_q1_yLabels, kitchen_q1_title);
+		createGraph(kitchen_q2_data, kitchen_q2_xLabels, kitchen_q2_yLabels, kitchen_q2_title);
+		createGraph(kitchen_q3_data, kitchen_q3_xLabels, kitchen_q3_yLabels, kitchen_q3_title);
+
+		createGraph(keg_q1_data, keg_q1_xLabels, keg_q1_yLabels, keg_q1_title);
+		createGraph(keg_q2_data, keg_q2_xLabels, keg_q2_yLabels, keg_q2_title);
+		createGraph(keg_q3_data, keg_q3_xLabels, keg_q3_yLabels, keg_q3_title);
+
+	}
+
+	(function refresh() {
+			setTimeout(function(){
+
+			var url = "/completed_forms/refresh/" + lastId;
+			var request = $.ajax(url, {
+				method: "GET"
+			});
+			request.done(function(response){
+				renderNewCompletedForm(response);
+				refresh();
+			});
+		}, 3000);
+	})();
+
+	// $("#sort_button").click(function(event){
+	//     event.preventDefault();
+	//       debugger;
+	//     var sort_id = $(this).attr("id")
+	//     var allCompleted = $(".completed_box")
+
+	//     allProjects.sort(function(a,b) {
+	//       an = $(a).find("." + sort_id).text(),
+	//       bn = $(b).find("." + sort_id).text();
+
+	//       if(an < bn) { return 1; }
+	//       if(an > bn) { return -1; }
+	//       return 0;
+	//     });
+
+ //    allCompleted.detach().appendTo(".completed_form_box")
+
+
 
 
 });
