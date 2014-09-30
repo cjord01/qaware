@@ -94,7 +94,7 @@
 day3 = 11
 10.times do
     day3 -= 1
-  completed = CompletedForm.create(form_id: keg_form.id, employee_id: employees.sample.id)
+  completed = CompletedForm.create(form_id: keg_form.id, employee_id: employees.sample.id, created_at: Date.today - day3)
   Response.create(completed_form_id: completed.id, possible_response_id: [25,26,27,28].sample)
   Response.create(completed_form_id: completed.id, possible_response_id: [29,30,31,32].sample)
   Response.create(completed_form_id: completed.id, possible_response_id: [33,34,35,36].sample)
@@ -104,7 +104,7 @@ end
 day2 = 11
 10.times do
   day2 -= 1
-  completed = CompletedForm.create(form_id: kitchen_form.id, employee_id: employees.sample.id)
+  completed = CompletedForm.create(form_id: kitchen_form.id, employee_id: employees.sample.id, created_at: Date.today - day2)
   Response.create(completed_form_id: completed.id, possible_response_id: [13,14,15,16].sample)
   Response.create(completed_form_id: completed.id, possible_response_id: [17,18,19,20].sample)
   Response.create(completed_form_id: completed.id, possible_response_id: [21,22,23,24].sample)
@@ -114,7 +114,7 @@ end
 day1 = 11
 10.times do
   day1 -= 1
-  completed = CompletedForm.create(form_id: restroom_form.id, employee_id: employees.sample.id)
+  completed = CompletedForm.create(form_id: restroom_form.id, employee_id: employees.sample.id, created_at: Date.today - day1rai)
   Response.create(completed_form_id: completed.id, possible_response_id: [1,2,3,4].sample)
   Response.create(completed_form_id: completed.id, possible_response_id: [5,6,7,8].sample)
   Response.create(completed_form_id: completed.id, possible_response_id: [9,10,11,12].sample)
