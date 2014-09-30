@@ -104,7 +104,7 @@ function createGraph(data, xLabels, yLabels, title){
 			var dateFormat = month + day + year;
 			var time = timeFormat(date);
 
-			$(".table").append("<tr><td><a href='/completed_forms/" + lastId + "'>Select</a>" + "</td><td>" +
+			$(".table").append("<tr><td><a class='button' href='/completed_forms/" + lastId + "'>Select</a>" + "</td><td>" +
 						dateFormat + "</td><td>" +
 						time + "</td><td>" +
 						responses[i].form.title + "</td><td>"+
