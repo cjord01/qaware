@@ -79,6 +79,8 @@ function createGraph(data, xLabels, yLabels, title){
 
 	graph.append("svg:path").attr("d", line(data));
 
+
+
 }
 
 
@@ -126,20 +128,21 @@ $(function(){
 		createGraph(keg_q2_data, keg_q2_xLabels, keg_q2_yLabels, keg_q2_title);
 		createGraph(keg_q3_data, keg_q3_xLabels, keg_q3_yLabels, keg_q3_title);
 
-		(function refresh() {
-				setTimeout(function(){
 
-				var url = "/completed_forms/refresh/" + lastId;
-				var request = $.ajax(url, {
-					method: "GET"
-				});
-				request.done(function(response){
-					renderNewCompletedForm(response);
-					refresh();
-				});
-			}, 3000);
-		})();
-	}
+	(function refresh() {
+			setTimeout(function(){
+
+			var url = "/completed_forms/refresh/" + lastId;
+			var request = $.ajax(url, {
+				method: "GET"
+			});
+			request.done(function(response){
+				renderNewCompletedForm(response);
+				refresh();
+			});
+		}, 3000);
+	})();
+}
 
 
 	// $("#sort_button").click(function(event){
