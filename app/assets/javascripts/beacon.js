@@ -9,25 +9,25 @@ $(function (){
 				});
 
 				request.done(function(response){
-					// $(".beacons tbody").replaceWith($(response).find("tbody")[0]);
-					$("table totals").replaceWith($(response).find("tbody")[1]);
-					debugger;
+					$(".beacons tbody").replaceWith($(response).find(".beacons tbody"));
+					$(".totals tbody").replaceWith($(response).find(".totals tbody"));
+					// debugger;
 
-					// debugger ;
 					refreshLoad();
 				});
 
-				// var tableUrl = "/completed_forms"
+				// code below works for polling just the data table
+				// var tableUrl = "/beacons"
 				// var tableRequest = $.ajax(tableUrl, {
 				// 	method: "GET"
 				// });
 
 				// tableRequest.done(function(response){
-				// 	$(".data_totals").replaceWith($(response).find(".data_totals"));
+				// 	$(".totals tbody").replaceWith($(response).find(".totals tbody"));
+				// 		// debugger ;
 				// });
-				// 		debugger ;
-				// 		refreshLoad();
-			}, 1000);
+						// refreshLoad();
+			}, 2000);
 		})();
 
 
