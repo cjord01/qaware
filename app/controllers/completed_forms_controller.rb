@@ -1,14 +1,12 @@
 class CompletedFormsController < ApplicationController
 
   def index
-    @completed_forms = CompletedForm.all
-    @restroom_form = Form.where(title: "Restroom")
-    @kitchen_form = Form.where(title: "Kitchen")
-    @keg_form = Form.where(title: "Keg")
-    @last_id = CompletedForm.last.id
-
     if session[:manager_id]
       @completed_forms = CompletedForm.order('created_at DESC').all
+      @restroom_form = Form.where(title: "Restroom")
+      @kitchen_form = Form.where(title: "Kitchen")
+      @keg_form = Form.where(title: "Keg")
+      @last_id = CompletedForm.last.id
     else
       redirect_to root_path
     end
@@ -41,6 +39,126 @@ class CompletedFormsController < ApplicationController
       @completed_form = CompletedForm.find(params[:id])
       @questions = @completed_form.questions
       @responses = @completed_form.responses
+    else
+      redirect_to root_path
+    end
+  end
+
+  def keg
+    if session[:manager_id]
+      @completed_forms = CompletedForm.order('created_at DESC').where(form_id: 1)
+    else
+      redirect_to root_path
+    end
+  end
+
+  def kitchen
+    if session[:manager_id]
+      @completed_forms = CompletedForm.order('created_at DESC').where(form_id: 2)
+    else
+      redirect_to root_path
+    end
+  end
+
+  def restroom
+    if session[:manager_id]
+      @completed_forms = CompletedForm.order('created_at DESC').where(form_id: 3)
+    else
+      redirect_to root_path
+    end
+  end
+
+  def today
+    if session[:manager_id]
+      @completed_forms = CompletedForm.order('created_at DESC').total_today
+    else
+      redirect_to root_path
+    end
+  end
+
+  def week
+    if session[:manager_id]
+      @completed_forms = CompletedForm.order('created_at DESC').total_this_week
+    else
+      redirect_to root_path
+    end
+  end
+
+  def month
+    if session[:manager_id]
+      @completed_forms = CompletedForm.order('created_at DESC').total_this_month
+    else
+      redirect_to root_path
+    end
+  end
+
+  def keg_today
+    if session[:manager_id]
+      @completed_forms = CompletedForm.order('created_at DESC').today(1)
+    else
+      redirect_to root_path
+    end
+  end
+
+  def keg_week
+    if session[:manager_id]
+      @completed_forms = CompletedForm.order('created_at DESC').this_week(1)
+    else
+      redirect_to root_path
+    end
+  end
+
+  def keg_month
+    if session[:manager_id]
+      @completed_forms = CompletedForm.order('created_at DESC').this_month(1)
+    else
+      redirect_to root_path
+    end
+  end
+
+  def kitchen_today
+    if session[:manager_id]
+      @completed_forms = CompletedForm.order('created_at DESC').today(2)
+    else
+      redirect_to root_path
+    end
+  end
+
+  def kitchen_week
+    if session[:manager_id]
+      @completed_forms = CompletedForm.order('created_at DESC').this_week(2)
+    else
+      redirect_to root_path
+    end
+  end
+
+  def kitchen_month
+    if session[:manager_id]
+      @completed_forms = CompletedForm.order('created_at DESC').this_month(2)
+    else
+      redirect_to root_path
+    end
+  end
+
+  def restroom_today
+    if session[:manager_id]
+      @completed_forms = CompletedForm.order('created_at DESC').today(3)
+    else
+      redirect_to root_path
+    end
+  end
+
+  def restroom_week
+    if session[:manager_id]
+      @completed_forms = CompletedForm.order('created_at DESC').this_week(3)
+    else
+      redirect_to root_path
+    end
+  end
+
+  def restroom_month
+    if session[:manager_id]
+      @completed_forms = CompletedForm.order('created_at DESC').this_month(3)
     else
       redirect_to root_path
     end

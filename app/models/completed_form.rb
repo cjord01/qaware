@@ -30,29 +30,31 @@ class CompletedForm < ActiveRecord::Base
 
   def self.today(form)
     forms = self.where(form_id: form)
-    forms.where(created_at: (Date.today)..(Date.today + 1)).size
+    forms.where(created_at: (Date.today)..(Date.today + 1))
   end
 
   def self.this_week(form)
     forms = self.where(form_id: form)
-    forms.where(created_at: (Date.today - 7)..(Date.today + 1)).size
+    forms.where(created_at: (Date.today - 7)..(Date.today + 1))
   end
 
   def self.this_month(form)
     forms = self.where(form_id: form)
-    forms.where(created_at: (Date.today - 30)..(Date.today + 1)).size
+    forms.where(created_at: (Date.today - 30)..(Date.today + 1))
   end
 
   def self.total_today
-    self.where(created_at: (Date.today)..(Date.today + 1)).size
+    self.where(created_at: (Date.today)..(Date.today + 1))
   end
 
   def self.total_this_week
-    self.where(created_at: (Date.today - 7)..(Date.today + 1)).size
+    self.where(created_at: (Date.today - 7)..(Date.today + 1))
   end
 
   def self.total_this_month
-    self.where(created_at: (Date.today - 30)..(Date.today + 1)).size
+    self.where(created_at: (Date.today - 30)..(Date.today + 1))
   end
+
+
 
 end
