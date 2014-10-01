@@ -79,78 +79,8 @@ function createGraph(data, xLabels, yLabels, title){
 
 	graph.append("svg:path").attr("d", line(data));
 
-	// tooltip code
 
-	// var bisectDate = d3.bisector(function(d) {return d.xLabels;}).left;
-	// var lineSvg = graph.append("g");
-	// var focus = graph.append("g")
-	// 				.style("display", "none");
-	// lineSvg.append("path")
-	// 	.attr("class", "line")
-	// 	.attr("d", line(data))
-
-	// // adding circle to graph
-	// focus.append("circle")
-	// 	.attr("class", "y")
-	// 	.style("fill", "none")
-	// 	.style("stroke", "blue")
-	// 	.attr("r", 4);
-
-	// // set area to capture mouse movements
-
-	// graph.append("rect")
-	// 	.attr("width", width)
-	// 	.attr("height", height)
-	// 	.style("fill", "none")
-	// 	.style("pointer-events", "all")
-	// 	.on("mouseover", function() {focus.style("display", null); })
-	// 	.on("mouseout", function() {focus.style("display", "none"); })
-	// 	.on("mousemove", mousemove);
-
-	// // determining which date will be highlighted
-	// function mousemove() {
-	// var x0 = x.invert(d3.mouse(this)[0]),			// returns the x position of the mouse
-	// 	i = bisectDate(data, x0, 1),				// find the index of our data array
-	// 	d0 = data[i-1],								// subsets of our data array
-	// 	d1 = data[i],
-	// 	d = x0 - d0.xLabels > d1.xLabels - x0 ? d1 : d0;
-
-	// focus.select("circle.y")
-	// 	.attr("transform",
-	// 			"translate(" + x(xLabels) + "," + y(yLabels) + ")");
-	// }
 }
-
-
-	// commented code below is for ajax appending
-	// function timeFormat(date){
-	// 	if (date.getHours() > 12){
-	// 		return date.getHours()-12 + ":" + date.getMinutes() + "pm";
-	// 	}
-	// 	else {
-	// 		return date.getHours() + ":" + date.getMinutes() + "am";
-	// 	}
-	// }
-
-
-	// function renderNewCompletedForm(responses){
-	// 	for (i=0; i < responses.length; i++){
-	// 		var date = new Date(responses[i].created_at);
-	// 		var month = date.getMonth() + 1 + "/";
-	// 		var day = date.getDate() + "/";
-	// 		var year = date.getFullYear().toString().substr(2,2);
-	// 		var dateFormat = month + day + year;
-	// 		var time = timeFormat(date);
-
-	// 		$(".table").append("<tr><td><a class='button' href='/completed_forms/" + lastId + "'>Select</a>" + "</td><td>" +
-	// 					dateFormat + "</td><td>" +
-	// 					time + "</td><td>" +
-	// 					responses[i].form.title + "</td><td>"+
-	// 					responses[i].employee.name + "</td><tr>");
-	// 			lastId ++;
-	// 	}
-	// }
-
 
 $(function(){
 
@@ -168,21 +98,5 @@ $(function(){
 		createGraph(keg_q3_data, keg_q3_xLabels, keg_q3_yLabels, keg_q3_title);
 	}
 
-		// (function refresh() {
-		// 		setTimeout(function(){
-
-		// 		// polling for completed forms list
-		// 		// var url = "/completed_forms/refresh/" + lastId;
-		// 		// var request = $.ajax(url, {
-		// 		// 	method: "GET"
-		// 		// });
-		// 		// request.done(function(response){
-		// 		// 	renderNewCompletedForm(response);
-		// 		// 	refresh();
-		// 		// });
-
-
-
-		// 	}, 5000);
-		// })();
+		
 });
