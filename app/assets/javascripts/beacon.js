@@ -9,9 +9,9 @@ $(function (){
 				});
 
 				request.done(function(response){
-					// $(".beacons tbody").replaceWith($(response).find("tbody")[0]);
+					$(".beacons tbody").replaceWith($(response).find("tbody")[0]);
 					$("table totals").replaceWith($(response).find("tbody")[1]);
-					debugger;
+					// debugger;
 
 					// debugger ;
 					refreshLoad();
