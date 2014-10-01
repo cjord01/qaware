@@ -33,35 +33,35 @@
       <thead>
         <tr>
           <th></th>
-          <th>Today</th>
-          <th>Week</th>
-          <th>Month</th>
+          <th><%= link_to "Today", completed_forms_today_path %></th>
+          <th><%= link_to "Week", completed_forms_week_path %></th>
+          <th><%= link_to "Month", completed_forms_month_path %></th>
         </tr>
       </thead>
       <div class="data_totals">
         <tr>
-          <th><%= @forms.find(1).title %></th>
-          <th><%= @completed_forms.today(1) %></th>
-          <th><%= @completed_forms.this_week(1) %></th>
-          <th><%= @completed_forms.this_month(1) %></th>
+          <th><%= link_to "#{@forms.find(1).title}", completed_forms_keg_path %></th>
+          <th><%= link_to "#{@completed_forms.today(1).size}", completed_forms_keg_today_path %></th>
+          <th><%= link_to "#{@completed_forms.this_week(1).size}", completed_forms_keg_week_path %></th>
+          <th><%= link_to "#{@completed_forms.this_month(1).size}", completed_forms_keg_month_path %></th>
         </tr>
         <tr>
-          <th><%= @forms.find(2).title %></th>
-          <th><%= @completed_forms.today(2) %></th>
-          <th><%= @completed_forms.this_week(2) %></th>
-          <th><%= @completed_forms.this_month(2) %></th>
+          <th><%= link_to "#{@forms.find(2).title}", completed_forms_kitchen_path %></th>
+          <th><%= link_to "#{@completed_forms.today(2).size}", completed_forms_kitchen_today_path %></th>
+          <th><%= link_to "#{@completed_forms.this_week(2).size}", completed_forms_kitchen_week_path %></th>
+          <th><%= link_to "#{@completed_forms.this_month(2).size}", completed_forms_kitchen_month_path %></th>
         </tr>
         <tr>
-          <th><%= @forms.find(3).title %></th>
-          <th><%= @completed_forms.today(3) %></th>
-          <th><%= @completed_forms.this_week(3) %></th>
-          <th><%= @completed_forms.this_month(3) %></th>
+          <th><%= link_to "#{@forms.find(3).title}", completed_forms_restroom_path %></th>
+          <th><%= link_to "#{@completed_forms.today(3).size}", completed_forms_restroom_today_path %></th>
+          <th><%= link_to "#{@completed_forms.this_week(3).size}", completed_forms_restroom_week_path %></th>
+          <th><%= link_to "#{@completed_forms.this_month(3).size}", completed_forms_restroom_month_path %></th>
         </tr>
         <tr>
-          <th>Total</th>
-          <th><%= @completed_forms.total_today %></th>
-          <th><%= @completed_forms.total_this_week %></th>
-          <th><%= @completed_forms.total_this_month %></th>
+          <th><%= link_to "Total", completed_forms_path %></th>
+          <th><%= link_to "#{@completed_forms.total_today.size}", completed_forms_today_path %></th>
+          <th><%= link_to "#{@completed_forms.total_this_week.size}", completed_forms_week_path %></th>
+          <th><%= link_to "#{@completed_forms.total_this_month.size}", completed_forms_month_path %></th>
         </tr>
       </div>
     </table>

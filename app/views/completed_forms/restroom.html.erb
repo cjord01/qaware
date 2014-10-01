@@ -1,4 +1,3 @@
-
 <div class="container">
 
   <div class="link_buttons">
@@ -11,7 +10,7 @@
   </div>
 
   <div class="completed_form_index">
-    <h2>Completed Inspections</h2>
+    <h2>Completed Restroom Inspections</h2>
     <table class="table">
       <thead>
       <tr>
@@ -25,17 +24,14 @@
 
       <% @completed_forms.each do |completed| %>
           <tr class="completed_forms">
-            <%= render :partial => 'completed_forms/completed_form', locals: {completed: completed} %>
+            <td><%= link_to "Select", completed_form_path(completed), class: 'button' %></td>
+            <td><%=  completed.date %></td>
+            <td><%=  completed.time %></td>
+            <td><%=  completed.title %></td>
+            <td><%=  completed.employee.name %></td>
           </tr>
 
       <% end %>
     </table>
   </div>
-
-  <script>var lastId = <%= @last_id %></script>
-
-  
-
-
-
-
+</div>
