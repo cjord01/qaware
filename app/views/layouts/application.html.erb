@@ -15,7 +15,7 @@
     <% if session[:manager_id] %>
       <nav class="navbar">
           <div>
-            <%= link_to "QAware", completed_forms_path, class: "navbar-header" %>
+            <%= link_to "QAware", beacons_path, class: "navbar-header" %>
             <span>
               <%#= link_to "Forms", forms_path, class: "btn btn-default" %>
               <%= link_to "Log Out",  logout_path, class: "btn btn-default"%>
