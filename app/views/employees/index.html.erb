@@ -1,12 +1,6 @@
 <div class="container">
-  <div class="link_buttons">
-    <h4>
-      <%= link_to "Location Status", beacons_path, class: "btn btn-hg btn-primary" %>
-      <%= link_to "Completed Forms", completed_forms_path, class: "btn btn-hg btn-primary" %>
-      <%= link_to "View Employees", employees_path, class: "btn btn-hg btn-primary" %>
-      <%= link_to "Add an Employee", new_employee_path, class: "btn btn-hg btn-primary" %>
-    </h4>
-  </div>
+
+  <%= render :partial => 'welcome/buttons' %>
 
   <div class="employee_index">
   <h2>Employees</h2>
@@ -34,7 +28,7 @@
       <%= f.submit class: "btn btn-hg btn-primary"%>
     <% end %>
   </div>
-  
+
 
 
 </div>
