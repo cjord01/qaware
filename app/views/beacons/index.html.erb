@@ -23,5 +23,48 @@
           </tr>
       <% end %>
     </table>
+
+      <div class="completed_form_totals">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Today</th>
+        <th>Week</th>
+        <th>Month</th>
+      </tr>
+    </thead>
+    <tbody class="data_totals">
+      <tr>
+        <th><%= @forms.find(1).title %></th>
+        <th><%= @completed_forms.today(1) %></th>
+        <th><%= @completed_forms.this_week(1) %></th>
+        <th><%= @completed_forms.this_month(1) %></th>
+      </tr>
+      <tr>
+        <th><%= @forms.find(2).title %></th>
+        <th><%= @completed_forms.today(2) %></th>
+        <th><%= @completed_forms.this_week(2) %></th>
+        <th><%= @completed_forms.this_month(2) %></th>
+      </tr>
+      <tr>
+        <th><%= @forms.find(3).title %></th>
+        <th><%= @completed_forms.today(3) %></th>
+        <th><%= @completed_forms.this_week(3) %></th>
+        <th><%= @completed_forms.this_month(3) %></th>
+      </tr>
+      <tr>
+        <th>Total</th>
+        <th><%= @completed_forms.total_today %></th>
+        <th><%= @completed_forms.total_this_week %></th>
+        <th><%= @completed_forms.total_this_month %></th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
   </div>
 </div>

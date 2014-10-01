@@ -154,7 +154,7 @@ function createGraph(data, xLabels, yLabels, title){
 
 $(function(){
 
-	if ( $(".table").length > 0){
+	if ( $(".completed_form_index").length > 0){
 		createGraph(rest_q1_data, rest_q1_xLabels, rest_q1_yLabels, rest_q1_title);
 		createGraph(rest_q2_data, rest_q2_xLabels, rest_q2_yLabels, rest_q2_title);
 		createGraph(rest_q3_data, rest_q3_xLabels, rest_q3_yLabels, rest_q3_title);
@@ -166,32 +166,23 @@ $(function(){
 		createGraph(keg_q1_data, keg_q1_xLabels, keg_q1_yLabels, keg_q1_title);
 		createGraph(keg_q2_data, keg_q2_xLabels, keg_q2_yLabels, keg_q2_title);
 		createGraph(keg_q3_data, keg_q3_xLabels, keg_q3_yLabels, keg_q3_title);
-
-
-		(function refresh() {
-				setTimeout(function(){
-
-				// polling for completed forms list
-				// var url = "/completed_forms/refresh/" + lastId;
-				// var request = $.ajax(url, {
-				// 	method: "GET"
-				// });
-				// request.done(function(response){
-				// 	renderNewCompletedForm(response);
-				// 	refresh();
-				// });
-
-				var tableUrl = "/completed_forms"
-				var tableRequest = $.ajax(tableUrl, {
-					method: "GET"
-				});
-
-				tableRequest.done(function(response){
-					$(".data_totals").replaceWith($(response).find(".data_totals"));
-						refresh();
-				});
-
-			}, 5000);
-		})();
 	}
+
+		// (function refresh() {
+		// 		setTimeout(function(){
+
+		// 		// polling for completed forms list
+		// 		// var url = "/completed_forms/refresh/" + lastId;
+		// 		// var request = $.ajax(url, {
+		// 		// 	method: "GET"
+		// 		// });
+		// 		// request.done(function(response){
+		// 		// 	renderNewCompletedForm(response);
+		// 		// 	refresh();
+		// 		// });
+
+
+
+		// 	}, 5000);
+		// })();
 });

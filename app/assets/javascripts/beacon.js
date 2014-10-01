@@ -1,6 +1,6 @@
 $(function (){
 	if ($(".beacon").length > 0){
-		(function employeeLocation() {
+		(function refreshLoad() {
 				setTimeout(function(){
 
 				var url = "/beacons";
@@ -8,13 +8,24 @@ $(function (){
 					method: "GET"
 				});
 				request.done(function(response){
-					// debugger ; 
+					// debugger ;
 					$(".beacons tbody").replaceWith($(response).find("tbody"));
-				
-					employeeLocation();
+
 				});
-			}, 500);
+
+				var tableUrl = "/completed_forms"
+				var tableRequest = $.ajax(tableUrl, {
+					method: "GET"
+				});
+
+				tableRequest.done(function(response){
+					$(".data_totals").replaceWith($(response).find(".data_totals"));
+				});
+						refreshLoad();
+			}, 1000);
 		})();
-	}	
+
+
+	}
 
 });

@@ -6,7 +6,6 @@ class CompletedFormsController < ApplicationController
     @kitchen_form = Form.where(title: "Kitchen")
     @keg_form = Form.where(title: "Keg")
     @last_id = CompletedForm.last.id
-    @forms = Form.all
 
     if session[:manager_id]
       @completed_forms = CompletedForm.order('created_at DESC').all
