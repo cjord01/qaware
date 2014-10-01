@@ -17,15 +17,15 @@ function createGraph(data, xLabels, yLabels, title){
 		.range([height, 0]);
 
 	var line = d3.svg.line()
-	.x(function createX(d,i) {
-		// console.log('Plotting X value for data point: ' + d + ' using index: ' + i + ' to be at: ' + x(i) + ' using our xScale.');
-		return x(i);
-	})
-	.y(function createY(d) {
-		// console.log('Plotting Y value for data point: ' + d + ' to be at: ' + y(d) + " using our yScale.");
+		.x(function createX(d,i) {
+			// console.log('Plotting X value for data point: ' + d + ' using index: ' + i + ' to be at: ' + x(i) + ' using our xScale.');
+			return x(i);
+		})
+		.y(function createY(d) {
+			// console.log('Plotting Y value for data point: ' + d + ' to be at: ' + y(d) + " using our yScale.");
 
-		return y(d);
-	})
+			return y(d);
+		})
 
 	var graph = d3.select("#graph").append("svg:svg")
 	    .attr("width", width + m[1] + m[3])

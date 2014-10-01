@@ -17,3 +17,6 @@
 
 # Ignore mac metadata files
 .DS_Store
+
+# Ignore tracking of simple cov coverage
+/coverage

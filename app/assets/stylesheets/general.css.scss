@@ -111,15 +111,23 @@ body a:hover {
   background-color: #8E44AD;
   border-color: white;
   color: white;
-  border: solid 2px;
+  border: solid 1px;
   font-weight: bold;
-  width: 11em;
+  margin-left: 1px;
+  margin-right: 1px;
+  padding-right: 20px;
+  padding-left: 19px;
+  box-sizing: border-box;
+  // margin: auto;
+  // width: 11em;
 }
 
 .link_buttons {
+  display: block;
   width: 46em;
-  margin-left: auto;
-  margin-right: auto;
+  // margin-left: auto;
+  // margin-right: auto;
+  margin: auto;
 }
 
 .table td {
@@ -226,7 +234,7 @@ margin-top: 0px;
   background-color: #8E44AD;
   width: 100%;
   color: white;
-  padding: 3em 1em 30em 1em;
+  padding: 3em 1em 24em 1em;
   text-align: center;
 }
 
