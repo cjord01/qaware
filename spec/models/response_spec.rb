@@ -24,8 +24,4 @@ describe 'Response' do
     expect(@response1.completed_form.title).to eq('Bathroom')
   end
 
-  # it 'can access a specific response' do
-  #   expect(@question.responses.first.text).to eq('Yes')
-  # end
-
 end

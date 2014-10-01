@@ -354,9 +354,6 @@
         1,
         null,
         null,
-        null,
-        null,
-        null,
         null
       ],
       "/Users/apprentice/Desktop/final_project/qaware/qaware/spec/models/employee_spec.rb": [
@@ -364,15 +361,31 @@
         null,
         1,
         1,
-        null
-      ],
-      "/Users/apprentice/Desktop/final_project/qaware/qaware/app/models/employee.rb": [
-        1,
-        1,
-        1,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        null,
         null,
         1,
         1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/apprentice/Desktop/final_project/qaware/qaware/spec/models/form_spec.rb": [
@@ -415,14 +428,33 @@
         null,
         1,
         1,
-        null
-      ],
-      "/Users/apprentice/Desktop/final_project/qaware/qaware/app/models/manager.rb": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        null,
+        null,
         1,
         1,
         1,
+        null,
+        null,
         1,
         1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/apprentice/Desktop/final_project/qaware/qaware/spec/models/possible_response_spec.rb": [
@@ -430,12 +462,35 @@
         null,
         1,
         1,
-        null
-      ],
-      "/Users/apprentice/Desktop/final_project/qaware/qaware/app/models/possible_response.rb": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        null,
+        null,
         1,
         1,
+        null,
+        null,
         1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/apprentice/Desktop/final_project/qaware/qaware/spec/models/question_spec.rb": [
@@ -498,13 +553,27 @@
         1,
         null,
         null,
+        null
+      ],
+      "/Users/apprentice/Desktop/final_project/qaware/qaware/app/models/manager.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/final_project/qaware/qaware/app/models/employee.rb": [
+        1,
+        1,
+        1,
         null,
-        null,
-        null,
-        null,
+        1,
+        1,
         null
       ],
       "/Users/apprentice/Desktop/final_project/qaware/qaware/app/models/form.rb": [
+        1,
         1,
         1,
         1,
@@ -543,6 +612,12 @@
       ],
       "/Users/apprentice/Desktop/final_project/qaware/qaware/app/models/question.rb": [
         1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/final_project/qaware/qaware/app/models/possible_response.rb": [
         1,
         1,
         1,
@@ -617,6 +692,6 @@
         null
       ]
     },
-    "timestamp": 1412191981
+    "timestamp": 1412200136
   }
 }

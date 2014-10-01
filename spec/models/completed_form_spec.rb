@@ -48,7 +48,4 @@ describe 'CompletedForm' do
     expect(@completed_form.time).to eq(@completed_form.created_at.strftime('%l:%M%P'))
   end
 
-  # pending 'shows the correct employee' do
-
-  # end
 end
