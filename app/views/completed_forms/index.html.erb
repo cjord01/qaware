@@ -32,68 +32,9 @@
     </table>
   </div>
 
-  <div class="sidebar" >
-    <div id="graph" class="agraph">
-      <script>
-      var lastId = <%= @last_id %>
-      var rest_q1_data = <%= @restroom_form.first.first_values %>
-      var rest_q2_data = <%= @restroom_form.first.second_values %>
-      var rest_q3_data = <%= @restroom_form.first.third_values %>
+  <script>var lastId = <%= @last_id %></script>
 
-      var rest_q1_xLabels = <%= raw @restroom_form.first.get_complete_dates %>
-      var rest_q2_xLabels = <%= raw @restroom_form.first.get_complete_dates %>
-      var rest_q3_xLabels = <%= raw @restroom_form.first.get_complete_dates %>
-
-
-      var rest_q1_yLabels = <%= raw @restroom_form.first.first_get_possible%>
-      var rest_q2_yLabels = <%= raw @restroom_form.first.second_get_possible%>
-      var rest_q3_yLabels = <%= raw @restroom_form.first.third_get_possible%>
-
-
-      var rest_q1_title = "<%=@restroom_form.first.questions.first.text%>"
-      var rest_q2_title = "<%=@restroom_form.first.questions.second.text%>"
-      var rest_q3_title = "<%=@restroom_form.first.questions.third.text%>"
-
-      var kitchen_q1_data = <%= @kitchen_form.first.first_values %>
-      var kitchen_q2_data = <%= @kitchen_form.first.second_values %>
-      var kitchen_q3_data = <%= @kitchen_form.first.third_values %>
-
-      var kitchen_q1_yLabels = <%= raw @kitchen_form.first.first_get_possible%>
-      var kitchen_q2_yLabels = <%= raw @kitchen_form.first.second_get_possible%>
-      var kitchen_q3_yLabels = <%= raw @kitchen_form.first.third_get_possible%>
-
-
-      var kitchen_q1_xLabels = <%= raw @kitchen_form.first.get_complete_dates %>
-      var kitchen_q2_xLabels = <%= raw @kitchen_form.first.get_complete_dates %>
-      var kitchen_q3_xLabels = <%= raw @kitchen_form.first.get_complete_dates %>
-
-      var kitchen_q1_title = "<%=@kitchen_form.first.questions.first.text%>"
-      var kitchen_q2_title = "<%=@kitchen_form.first.questions.second.text%>"
-      var kitchen_q3_title = "<%=@kitchen_form.first.questions.third.text%>"
-
-
-      var keg_q1_data = <%= @keg_form.first.first_values %>
-      var keg_q2_data = <%= @keg_form.first.second_values %>
-      var keg_q3_data = <%= @keg_form.first.third_values %>
-
-
-      var keg_q1_yLabels = <%= raw @keg_form.first.first_get_possible%>
-      var keg_q2_yLabels = <%= raw @keg_form.first.second_get_possible%>
-      var keg_q3_yLabels = <%= raw @keg_form.first.third_get_possible%>
-
-
-      var keg_q1_title = "<%=@keg_form.first.questions.first.text%>"
-      var keg_q2_title = "<%=@keg_form.first.questions.second.text%>"
-      var keg_q3_title = "<%=@keg_form.first.questions.third.text%>"
-
-      var keg_q1_xLabels = <%= raw @keg_form.first.get_complete_dates %>
-      var keg_q2_xLabels = <%= raw @keg_form.first.get_complete_dates %>
-      var keg_q3_xLabels = <%= raw @keg_form.first.get_complete_dates %>
-      </script>
-
-
-    </div>
-</div>
+  
 
 
 

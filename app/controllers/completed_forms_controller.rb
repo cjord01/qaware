@@ -1,11 +1,10 @@
 class CompletedFormsController < ApplicationController
 
   def index
+
+
     if session[:manager_id]
       @completed_forms = CompletedForm.order('created_at DESC').all
-      @restroom_form = Form.where(title: "Restroom")
-      @kitchen_form = Form.where(title: "Kitchen")
-      @keg_form = Form.where(title: "Keg")
       @last_id = CompletedForm.last.id
     else
       redirect_to root_path
