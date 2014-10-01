@@ -144,11 +144,29 @@ body a:hover {
   border: solid 1px;
   background-color: #8E44AD;
   color: white;
-  height: 17em;
+  height: 20em;
   overflow: auto;
 }
 
 .employee_index h2 {
+  margin-top: 0px;
+}
+
+.beacon_index {
+  width: 46em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+  -webkit-border-radius: 5px;
+  border-color: #8E44AD;
+  border: solid 1px;
+  background-color: #8E44AD;
+  color: white;
+  height: 15em;
+  margin-bottom: 10px;
+}
+
+.beacon_index h2 {
   margin-top: 0px;
 }
 

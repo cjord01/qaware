@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
     if session[:manager_id]
-      redirect_to completed_forms_path
+      redirect_to beacons_path
     end
   end
 
@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if @manager
       if @manager.authenticate(params[:password])
         session[:manager_id] = @manager.id
-        redirect_back_or completed_forms_path
+        redirect_back_or beacons_path
       else
         redirect_to root_path
       end
