@@ -33,7 +33,6 @@ gem 'font-awesome-rails'
 gem 'font-awesome-sass'
 
 
-
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
@@ -46,6 +45,7 @@ gem "handles_sortable_columns"
 gem 'jquery-tablesorter'
 
 group :development, :test do
+  gem 'jasmine'
   gem 'capybara', '~> 2.2.1'
   gem 'shoulda-matchers', require: false
   gem 'simplecov'
