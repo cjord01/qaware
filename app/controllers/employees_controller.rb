@@ -3,6 +3,8 @@ class EmployeesController < ApplicationController
   def index
     if session[:manager_id]
       @employees = Employee.all
+      @employee = Employee.new
+      @manager = Manager.find(session[:manager_id])
     else
       redirect_to root_path
     end

@@ -2,9 +2,6 @@ class CompletedFormsController < ApplicationController
 
   def index
     @completed_forms = CompletedForm.all
-    @restroom_form = Form.where(title: "Restroom")
-    @kitchen_form = Form.where(title: "Kitchen")
-    @keg_form = Form.where(title: "Keg")
     @last_id = CompletedForm.last.id
 
     if session[:manager_id]

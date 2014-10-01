@@ -18,7 +18,7 @@ end
 =begin
 curl -XPUT -H "Content-Type: application/json" "localhost:3000/api/beacons" -d '
 {
-  "minor_id": "1",
+  "minor_id": "2",
   "employee_id": "1"
 }'
 =end
@@ -27,7 +27,7 @@ curl -XPUT -H "Content-Type: application/json" "localhost:3000/api/beacons" -d '
 =begin
 curl -XDELETE -H "Content-Type: application/json" "localhost:3000/api/beacons" -d '
 {
-  "minor_id": "1",
+  "minor_id": "2",
   "employee_id": "1"
 }'
 =end

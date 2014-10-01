@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get 'beacons' => 'beacons#index'
 
+  get 'graphs' => 'graphs#index'
 
   # get 'welcome/index'
 
