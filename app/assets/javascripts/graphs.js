@@ -6,7 +6,7 @@ function createGraph(data, xLabels, yLabels, title){
 	var title = title;
 
 	var m = [80, 80, 80, 320];
-	var width = 750 - m[1] - m[3];
+	var width = 720 - m[1] - m[3];
 	var height = 450 - m[0] - m[2];
 
 	var x = d3.scale.linear()
