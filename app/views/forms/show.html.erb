@@ -5,7 +5,7 @@
     <form id="empty_form" action="/completed_forms" method="post">
 
       <label>
-        <select class="button" name="response[employee_id]">
+        <select class="button_hidden" name="response[employee_id]">
           <% @employees.each do |employee| %>
           <option value="<%= employee.id %>">
             <%=employee.name%>

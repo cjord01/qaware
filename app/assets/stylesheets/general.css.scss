@@ -211,12 +211,15 @@ margin-top: 0px;
   margin-bottom: 0;
 }
 
+.button_hidden {
+  display: none;
+}
 
 .new_form {
-  width: 23em;
+  width: 20em;
   margin-left: auto;
   margin-right: auto;
-  padding: 1em 1em 2em 1em;
+  padding: 1em 1em 5em 1em;
   background-color: #8E44AD;
 }
 
@@ -224,9 +227,14 @@ margin-top: 0px;
   color: white;
 }
 
-.new_form h2 {
+.new_form .button {
+  margin-bottom: 0px;
   margin-top: 0px;
-  margin-bottom: 10px;
+}
+
+.new_form h2 {
+  margin-top: 10px;
+  margin-bottom: 0px;
   text-align: center;
 }
 
