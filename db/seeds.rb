@@ -114,7 +114,7 @@ end
 day1 = 11
 10.times do
   day1 -= 1
-  completed = CompletedForm.create(form_id: restroom_form.id, employee_id: employees.sample.id, created_at: Date.today - day1rai)
+  completed = CompletedForm.create(form_id: restroom_form.id, employee_id: employees.sample.id, created_at: Date.today - day1)
   Response.create(completed_form_id: completed.id, possible_response_id: [1,2,3,4].sample)
   Response.create(completed_form_id: completed.id, possible_response_id: [5,6,7,8].sample)
   Response.create(completed_form_id: completed.id, possible_response_id: [9,10,11,12].sample)

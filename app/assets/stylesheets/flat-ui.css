@@ -2838,8 +2838,10 @@ fieldset[disabled] .input-group-btn .btn-default.active {
 @media (min-width: 768px) {
   .navbar-header {
     float: left;
+    height: 95px;
     }
   }
+
 .navbar-collapse {
   padding-right: 21px;
   padding-left: 21px;
